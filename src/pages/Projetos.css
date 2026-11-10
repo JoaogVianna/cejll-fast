@@ -1,0 +1,33 @@
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.filtro {
+  min-height: 44px;
+  padding: 0.4rem 1.1rem;
+  border: 2px solid var(--navy);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--navy);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filtro:hover {
+  background: var(--gray-100);
+}
+
+.filtro.ativo {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.filtro-resultado {
+  margin: 0 0 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}

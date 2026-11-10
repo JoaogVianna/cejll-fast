@@ -1,0 +1,149 @@
+.prog-topo {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.prog-topo .filtros {
+  margin: 0;
+}
+
+.dias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dia {
+  min-height: 48px;
+  padding: 0.5rem 1.4rem;
+  border: 2px solid var(--navy);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--navy);
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.dia:hover {
+  background: var(--gray-100);
+}
+
+.dia.ativo {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.busca input {
+  width: 100%;
+  max-width: 420px;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--navy);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--gray-800);
+  font: inherit;
+}
+
+.prog-lista {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.atividade {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 2px solid var(--navy);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+@media (min-width: 700px) {
+  .atividade {
+    grid-template-columns: 130px 1fr auto;
+    align-items: start;
+  }
+}
+
+.atv-hora strong {
+  display: block;
+  color: var(--pink);
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.atv-hora span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.atividade h3 {
+  margin: 0.4rem 0 0;
+  color: var(--navy);
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.atv-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+}
+
+.atividade details {
+  margin-top: 0.75rem;
+}
+
+.atividade summary {
+  color: var(--navy);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.atividade details p {
+  margin: 0.5rem 0 0;
+}
+
+.atv-fav {
+  min-height: 44px;
+  padding: 0.4rem 1.1rem;
+  border: 2px solid var(--navy);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--navy);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.atv-fav:hover {
+  background: var(--gray-100);
+}
+
+.atv-fav[aria-pressed='true'] {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.prog-vazio {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.prog-vazio p {
+  margin: 0 auto 1rem;
+}

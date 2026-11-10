@@ -1,0 +1,73 @@
+.card.form-card {
+  gap: 0.75rem;
+  padding: 1.5rem;
+  scroll-margin-top: 90px;
+}
+
+.form-num {
+  color: var(--pink);
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.card.form-card h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.card.form-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.form-periodo {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.card.form-card .btn {
+  background: var(--pink);
+}
+
+.card.form-card .btn:hover {
+  background: #c92d74;
+}
+
+.card.form-card .btn:disabled {
+  background: #e3e5ec;
+  color: var(--gray-800);
+  cursor: not-allowed;
+}
+
+/* estados das inscrições (ícone + texto + cor, nunca só cor) */
+.status {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.status-aberta {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.status-embreve {
+  background: var(--gray-100);
+  border-color: #dcdfe8;
+  color: var(--navy);
+}
+
+.status-encerrada {
+  background: var(--white);
+  border-color: var(--gray-800);
+  color: var(--gray-800);
+}
