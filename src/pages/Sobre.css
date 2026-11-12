@@ -1,0 +1,56 @@
+.sobre-texto {
+  max-width: 70ch;
+}
+
+.sobre-texto p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.objetivos,
+.como-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.objetivo,
+.como-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  border: 2px solid var(--navy);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.objetivo-num {
+  color: var(--pink);
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.objetivo h3,
+.como-item h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.objetivo p,
+.como-item p {
+  margin: 0;
+}
+
+.como-item .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
