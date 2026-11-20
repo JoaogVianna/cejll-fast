@@ -1,0 +1,76 @@
+.prog-lista {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prog-item {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  border: 2px solid var(--navy);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.prog-quando {
+  display: flex;
+  flex-direction: column;
+}
+
+.prog-hora {
+  color: var(--pink);
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.prog-dia {
+  margin-top: 0.3rem;
+  color: var(--navy);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.prog-corpo {
+  min-width: 0;
+}
+
+.prog-corpo h3 {
+  margin: 0.25rem 0 0;
+  color: var(--navy);
+  font-size: clamp(1.3rem, 5vw, 1.7rem);
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.prog-meta {
+  margin: 0.4rem 0 0;
+}
+
+/* no celular o horário vai para cima do nome */
+@media (max-width: 480px) {
+  .prog-item {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding: 1.1rem 1.25rem;
+  }
+
+  .prog-quando {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .prog-dia {
+    margin-top: 0;
+  }
+}

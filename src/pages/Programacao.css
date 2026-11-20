@@ -147,3 +147,62 @@
 .prog-vazio p {
   margin: 0 auto 1rem;
 }
+
+/* filtro por local */
+.prog-local {
+  display: grid;
+  gap: 0.25rem;
+  max-width: 320px;
+}
+
+.prog-local label {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.prog-local select {
+  min-height: 44px;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--navy);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--gray-800);
+  font: inherit;
+}
+
+/* selos de andamento (símbolo + texto, nunca só cor) */
+.estado {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.8rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.estado-agora {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.estado-embreve {
+  background: var(--gray-100);
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.estado-encerrada {
+  background: var(--white);
+  border-color: var(--gray-800);
+  color: var(--gray-800);
+}
+
+.atividade.is-agora {
+  border-color: var(--pink);
+  box-shadow: inset 8px 0 0 var(--pink);
+}
+
+.atividade.is-encerrada {
+  background: var(--gray-100);
+}

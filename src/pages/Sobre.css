@@ -1,56 +1,188 @@
-.sobre-texto {
-  max-width: 70ch;
-}
-
-.sobre-texto p {
-  font-size: 1.15rem;
-  line-height: 1.6;
-}
-
-.objetivos,
-.como-grid {
+.sobre-hero {
+  position: relative;
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .sobre-hero {
+    grid-template-columns: 1.3fr 1fr;
+  }
+}
+
+.sobre-hero p {
+  margin: 1rem 0 0;
+  color: var(--white);
+  font-size: 1.15rem;
+}
+
+.sobre-hero p.sobre-hero-destaque {
+  margin-top: 1.25rem;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+}
+
+/* espaço da imagem de destaque, só em tela larga */
+.sobre-hero-img {
+  display: none;
+  min-height: 220px;
+  place-items: center;
+  border: 3px dashed rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@media (min-width: 860px) {
+  .sobre-hero-img {
+    display: grid;
+  }
+}
+
+.sobre-split {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .sobre-split {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.proposito-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.objetivo,
-.como-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  padding: 1.5rem;
+.proposito-item {
+  padding: 1.25rem;
   border: 2px solid var(--navy);
   border-radius: 16px;
   background: var(--white);
 }
 
-.objetivo-num {
-  color: var(--pink);
-  font-size: 3rem;
+.proposito-icone {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 0.75rem;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 1.6rem;
+}
+
+.proposito-item h3 {
+  margin: 0 0 0.4rem;
+  color: var(--navy);
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.proposito-item p {
+  margin: 0;
+}
+
+.quem-fotos {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.numeros {
+  padding-block: clamp(3rem, 7vw, 5rem);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.numeros h2 {
+  margin: 0 0 2rem;
+  color: var(--white);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.numeros-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 0;
+}
+
+.numeros-grid div {
+  padding-bottom: 1rem;
+  border-bottom: 4px solid var(--pink);
+}
+
+/* o número vem antes do rótulo na tela, mas o rótulo é o <dt> */
+.numeros-grid div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.numeros-grid dd {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 4.6rem);
   font-weight: 900;
   line-height: 1;
 }
 
-.objetivo h3,
-.como-item h3 {
-  margin: 0;
-  color: var(--navy);
-  font-size: 1.5rem;
+.numeros-grid dt {
+  margin-top: 0.4rem;
+  font-weight: 600;
+}
+
+.encerramento {
+  padding-block: clamp(3rem, 7vw, 5rem);
+  background: var(--pink);
+  color: var(--white);
+}
+
+.encerramento h2 {
+  max-width: 18ch;
+  margin: 0 0 1rem;
+  color: var(--white);
+  font-size: clamp(2.4rem, 7vw, 4.6rem);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1;
   text-transform: uppercase;
 }
 
-.objetivo p,
-.como-item p {
-  margin: 0;
+.encerramento p {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
-.como-item .btn {
-  align-self: flex-start;
-  margin-top: auto;
+.encerramento-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.encerramento .btn {
+  background: var(--navy);
+}
+
+.encerramento .btn:hover {
+  background: var(--gray-800);
+}
+
+.encerramento .btn:focus-visible {
+  outline-color: var(--navy);
 }

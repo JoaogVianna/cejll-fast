@@ -115,3 +115,12 @@
   line-height: 1;
   text-transform: uppercase;
 }
+
+.projeto-img,
+.projeto-galeria-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  object-fit: cover;
+}

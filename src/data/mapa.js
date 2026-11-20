@@ -1,70 +1,28 @@
-// Espaços do mapa. O desenho é ilustrativo: quando a planta real estiver pronta,
-// ajuste os nomes, as descrições e as posições.
-// x, y, w, h: posição e tamanho do retângulo no desenho (o desenho tem 400 x 300).
-// rotulo: nome curto que aparece dentro do retângulo.
-// tipo: precisa ser um dos TIPOS abaixo.
-export const TIPOS = [
-  { nome: 'Estandes', classe: 'pink' },
-  { nome: 'Oficinas', classe: 'navy' },
-  { nome: 'Apresentações', classe: 'gray' },
-  { nome: 'Serviços', classe: 'mist' },
-]
+// Mapa do evento.
+//
+// nome: precisa ser IDÊNTICO ao "local" usado em programacao.js e oficinas.js,
+//       porque é assim que o mapa descobre quais atividades acontecem em cada espaço.
+// x, y, w, h: posição e tamanho do espaço, medidos numa área de 1000 x 480.
+//
+// PARA USAR A PLANTA REAL:
+//   1. salve a imagem em public/mapa/planta.png
+//   2. troque imagem: null por imagem: '/mapa/planta.png'
+//   3. ajuste x, y, w, h de cada espaço para ficar por cima do lugar certo na imagem
+//   4. mude exemplo para false
+
+export const PLANTA = {
+  imagem: null,
+  largura: 1000,
+  altura: 480,
+  exemplo: true,
+}
 
 export const ESPACOS = [
-  {
-    id: 'palco',
-    nome: 'Palco',
-    rotulo: 'Palco',
-    tipo: 'Apresentações',
-    descricao: 'Shows, apresentações dos projetos e a cerimônia do CEJLL Awards.',
-    x: 110, y: 16, w: 180, h: 64,
-  },
-  {
-    id: 'auditorio',
-    nome: 'Auditório',
-    rotulo: 'Auditório',
-    tipo: 'Apresentações',
-    descricao: 'Palestras e conversas.',
-    x: 300, y: 16, w: 80, h: 64,
-  },
-  {
-    id: 'estandes',
-    nome: 'Área dos estandes',
-    rotulo: 'Estandes',
-    tipo: 'Estandes',
-    descricao: 'Onde ficam os estandes dos projetos aprovados. A página de cada projeto indica o seu estande.',
-    x: 20, y: 96, w: 240, h: 110,
-  },
-  {
-    id: 'salas',
-    nome: 'Salas de oficinas',
-    rotulo: 'Oficinas',
-    tipo: 'Oficinas',
-    descricao: 'Salas onde acontecem as oficinas e as atividades práticas.',
-    x: 276, y: 96, w: 104, h: 50,
-  },
-  {
-    id: 'laboratorio',
-    nome: 'Laboratório',
-    rotulo: 'Lab.',
-    tipo: 'Oficinas',
-    descricao: 'Espaço para as oficinas que usam computadores.',
-    x: 276, y: 156, w: 104, h: 50,
-  },
-  {
-    id: 'entrada',
-    nome: 'Entrada principal',
-    rotulo: 'Entrada',
-    tipo: 'Serviços',
-    descricao: 'Por aqui os visitantes chegam ao evento.',
-    x: 20, y: 222, w: 150, h: 56,
-  },
-  {
-    id: 'informacoes',
-    nome: 'Ponto de informações',
-    rotulo: 'Informações',
-    tipo: 'Serviços',
-    descricao: 'Atendimento da organização para tirar dúvidas.',
-    x: 186, y: 222, w: 194, h: 56,
-  },
+  { id: 'entrada', nome: 'Entrada principal', x: 40, y: 40, w: 240, h: 200 },
+  { id: 'patio', nome: 'Pátio', x: 300, y: 40, w: 400, h: 200 },
+  { id: 'auditorio', nome: 'Auditório', x: 720, y: 40, w: 240, h: 200 },
+  { id: 'arte', nome: 'Sala de artes', x: 40, y: 270, w: 240, h: 170 },
+  { id: 'lab', nome: 'Laboratório de informática', x: 300, y: 270, w: 240, h: 170 },
+  { id: 'biblioteca', nome: 'Biblioteca', x: 560, y: 270, w: 190, h: 170 },
+  { id: 'quadra', nome: 'Quadra', x: 770, y: 270, w: 190, h: 170 },
 ]

@@ -1,14 +1,22 @@
 import { Link, useParams } from 'react-router-dom'
 import { OFICINAS } from '../data/oficinas'
-import { duracao } from '../utils/duracao'
-import './ProjetoDetalhe.css'
+import { horarioDaOficina } from '../utils/horarioOficina'
+
+function textoInscricao(o) {
+  const partes = []
+  if (o.inscricao === 'previa') partes.push('É necessária inscrição prévia')
+  if (o.inscricao === 'nao') partes.push('Não precisa de inscrição')
+  if (o.vagas === 'limitadas') partes.push('Vagas limitadas')
+  if (o.vagas === 'abertas') partes.push('Aberta a todos')
+  return partes.length ? partes.join('. ') + '.' : null
+}
 
 export default function OficinaDetalhe() {
-  // useParams lê a parte variável do endereço: /oficinas/:id
   const { id } = useParams()
-  const oficina = OFICINAS.find((o) => o.id === id)
+  const indice = OFICINAS.findIndex((o) => o.id === id)
+  const o = OFICINAS[indice]
 
-  if (!oficina) {
+  if (!o) {
     return (
       <section className="em-breve">
         <h1>Atividade não encontrada</h1>
@@ -18,83 +26,98 @@ export default function OficinaDetalhe() {
     )
   }
 
+  const proxima = OFICINAS[(indice + 1) % OFICINAS.length]
+  const horario = horarioDaOficina(o)
+
+  // só entram na lista as informações que já estão definidas
+  const linhas = [
+    ['Dia', horario && !horario.livre ? horario.dia : null],
+    [
+      'Horário',
+      horario
+        ? horario.livre
+          ? 'Atividade livre: pode ser visitada durante boa parte do evento.'
+          : `Das ${horario.inicio} às ${horario.fim}`
+        : null,
+    ],
+    ['Duração', o.duracao],
+    ['Local', o.local],
+    ['Responsáveis', o.responsaveis ? o.responsaveis.join(', ') : null],
+    ['Inscrição', textoInscricao(o)],
+  ].filter(([, valor]) => valor)
+
+  const faltaAlgo = !horario || !o.local || !o.responsaveis
+
   return (
     <>
       <section className="page-banner">
         <div className="wrap">
           <Link className="voltar" to="/oficinas">← Todas as atividades</Link>
-          <span className="projeto-tag">{oficina.categoria}</span>
-          <h1>{oficina.nome}</h1>
+          <span className="projeto-tag">{o.categoria}</span>
+          <h1>{o.nome}</h1>
         </div>
       </section>
 
       <section className="section">
         <div className="wrap projeto-layout">
           <div>
-            {oficina.exemplo && <span className="tag">Exemplo</span>}
+            <div
+              className="galeria-item"
+              role="img"
+              aria-label="Espaço reservado para a imagem da atividade"
+            >
+              Imagem da atividade
+            </div>
+
+            {o.exemplo && <span className="tag" style={{ marginTop: '1.5rem', display: 'inline-block' }}>Exemplo</span>}
             <h2 className="section-title">Sobre a atividade</h2>
-            <p>{oficina.detalhes}</p>
+            <p>{o.descricao}</p>
 
-            {oficina.inscricaoPrevia &&
-              (oficina.inscricaoUrl ? (
-                <p>
-                  <a
-                    className="btn"
-                    href={oficina.inscricaoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Inscrever-se
-                    <span className="visually-hidden"> (abre em nova aba)</span>
-                  </a>
-                </p>
-              ) : (
-                <p>
-                  <button className="btn" type="button" disabled>
-                    Inscrição ainda não disponível
-                  </button>
-                </p>
-              ))}
-
-            <p>
-              <Link to="/programacao">Ver na programação completa</Link>
-            </p>
+            {o.comoFunciona.length > 0 && (
+              <>
+                <h3 className="projeto-subtitulo">Como funciona</h3>
+                {o.comoFunciona.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </>
+            )}
           </div>
 
-          <dl className="projeto-info">
-            <div>
-              <dt>Responsável</dt>
-              <dd>{oficina.responsavel}</dd>
-            </div>
-            <div>
-              <dt>Local</dt>
-              <dd>{oficina.local}</dd>
-            </div>
-            <div>
-              <dt>Dia e horário</dt>
-              <dd>
-                {oficina.diaRotulo}, das {oficina.inicio} às {oficina.fim}
-              </dd>
-            </div>
-            <div>
-              <dt>Duração</dt>
-              <dd>{duracao(oficina.inicio, oficina.fim)}</dd>
-            </div>
-            <div>
-              <dt>Materiais</dt>
-              <dd>{oficina.materiais}</dd>
-            </div>
-            <div>
-              <dt>Inscrição prévia</dt>
-              <dd>{oficina.inscricaoPrevia ? 'Necessária' : 'Não é necessária'}</dd>
-            </div>
-            <div>
-              <dt>Vagas</dt>
-              <dd>{oficina.vagas ? `${oficina.vagas} vagas` : 'Aberta a todos'}</dd>
-            </div>
-          </dl>
+          <div>
+            <dl className="projeto-info">
+              {linhas.map(([titulo, valor]) => (
+                <div key={titulo}>
+                  <dt>{titulo}</dt>
+                  <dd>{valor}</dd>
+                </div>
+              ))}
+              {linhas.length === 0 && (
+                <div>
+                  <dt>Informações</dt>
+                  <dd>Os detalhes desta atividade serão divulgados em breve.</dd>
+                </div>
+              )}
+            </dl>
+
+            {faltaAlgo && linhas.length > 0 && (
+              <p style={{ marginTop: '1rem', fontSize: '0.95rem' }}>
+                Algumas informações, como horário, local e responsáveis, serão divulgadas em breve.
+              </p>
+            )}
+
+            <p style={{ marginTop: '1rem' }}>
+              <Link className="btn btn-outline" to="/programacao">Ver na programação</Link>
+            </p>
+          </div>
         </div>
       </section>
+
+      <Link className="proximo" to={`/oficinas/${proxima.id}`}>
+        <span className="wrap">
+          <span className="proximo-rotulo">Próxima atividade</span>
+          <span className="proximo-nome">{proxima.nome} →</span>
+        </span>
+      </Link>
     </>
   )
 }

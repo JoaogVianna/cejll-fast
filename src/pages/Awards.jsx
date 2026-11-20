@@ -1,127 +1,181 @@
 import { Link } from 'react-router-dom'
+import ProjetoCard from '../components/ProjetoCard'
 import { PROJETOS } from '../data/projetos'
-import { APRESENTACAO, CATEGORIAS_AWARDS, VOTACAO, RESULTADO } from '../data/awards'
-import { situacao, formatar } from '../utils/inscricao'
-import '../components/FormCard.css'
+import { CATEGORIAS_AWARDS, CATEGORIAS_EXEMPLO, VOTACAO, RESULTADO } from '../data/awards'
+import { situacaoDoPeriodo } from '../utils/situacao'
 import './Awards.css'
 
-const ROTULOS_VOTACAO = {
+const VARIANTES = ['navy', 'pink', 'gray']
+
+const ROTULOS = {
   aberta: '● Votação aberta',
   embreve: '◔ Em breve',
   encerrada: '✕ Votação encerrada',
 }
 
-function textoVotacao(estado) {
-  if (estado === 'aberta') {
-    return VOTACAO.fecha ? `Vote até ${formatar(VOTACAO.fecha)}.` : 'A votação está aberta.'
-  }
-  if (estado === 'encerrada') return 'A votação foi encerrada.'
-  return VOTACAO.abre
-    ? `A votação abre em ${formatar(VOTACAO.abre)}.`
-    : 'O período de votação ainda será divulgado.'
-}
+const dia = (iso) =>
+  new Date(iso).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long' })
 
 export default function Awards() {
-  const estado = situacao(VOTACAO)
+  // os indicados de cada categoria vêm dos projetos que declaram concorrer a ela
+  const indicadosDe = (categoria) => PROJETOS.filter((p) => p.awards === categoria.nome)
+
+  const estado = situacaoDoPeriodo(VOTACAO)
+  const podeVotar = estado === 'aberta' && VOTACAO.url
+
+  let periodo = 'Período de votação a definir.'
+  if (estado === 'aberta') periodo = VOTACAO.fecha ? `Votação até ${dia(VOTACAO.fecha)}.` : 'Votação aberta.'
+  if (estado === 'encerrada') periodo = 'A votação foi encerrada.'
+  if (estado === 'embreve' && VOTACAO.abre) periodo = `A votação abre em ${dia(VOTACAO.abre)}.`
 
   return (
     <>
+      {/* 1. Apresentação */}
       <section className="page-banner">
-        <div className="wrap">
-          <h1>CEJLL Awards</h1>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="wrap">
-          <nav className="awards-nav" aria-label="Nesta página">
-            <a href="#categorias">Categorias e indicados</a>
-            <a href="#votacao">Votação</a>
-            <a href="#resultado">Resultado</a>
-          </nav>
-
-          <div className="awards-texto">
-            <h2 className="section-title">O que é o CEJLL Awards?</h2>
-            {APRESENTACAO.map((p) => (
-              <p key={p}>{p}</p>
-            ))}
+        <div className="wrap aw-hero">
+          <div>
+            <h1>CEJLL Awards</h1>
+            <p className="aw-hero-destaque">Conheça os indicados e acompanhe a votação.</p>
           </div>
+          <div className="aw-hero-img" aria-hidden="true">Imagem de destaque</div>
         </div>
       </section>
 
-      <section className="section section-mist" id="categorias" aria-labelledby="categorias-titulo">
+      <section className="section" aria-labelledby="oque-awards-titulo">
         <div className="wrap">
-          <h2 className="section-title" id="categorias-titulo">Categorias e indicados</h2>
-          <div className="categorias">
-            {CATEGORIAS_AWARDS.map((categoria) => {
-              const indicados = PROJETOS.filter((p) => p.awards === categoria)
+          <span className="tag">Texto provisório</span>
+          <h2 className="section-title" id="oque-awards-titulo">O que é o CEJLL Awards?</h2>
+          <p>Aqui entra o texto explicando o que é o CEJLL Awards, qual é a sua finalidade e como funciona a competição.</p>
+          <p className="aw-aviso">
+            <strong>Importante:</strong> participar da exposição não significa obrigatoriamente
+            participar da competição.
+          </p>
+        </div>
+      </section>
+
+      {/* 2. Categorias */}
+      <section className="section section-mist" aria-labelledby="categorias-titulo">
+        <div className="wrap">
+          {CATEGORIAS_EXEMPLO && <span className="tag">Categorias de exemplo</span>}
+          <h2 className="section-title" id="categorias-titulo">Categorias</h2>
+          {CATEGORIAS_EXEMPLO && (
+            <p>As categorias serão ajustadas conforme os projetos inscritos.</p>
+          )}
+          <ul className="aw-cats">
+            {CATEGORIAS_AWARDS.map((c) => {
+              const n = indicadosDe(c).length
               return (
-                <article key={categoria} className="categoria">
-                  <h3>{categoria}</h3>
-                  {indicados.length === 0 ? (
-                    <p>Indicados a definir.</p>
-                  ) : (
-                    <ul>
-                      {indicados.map((p) => (
-                        <li key={p.id}>
-                          <Link to={`/projetos/${p.id}`}>{p.nome}</Link>
-                          {p.exemplo && <span className="tag">Exemplo</span>}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </article>
+                <li key={c.id}>
+                  <a href={`#indicados-${c.id}`}>
+                    <strong>{c.nome}</strong>
+                    <span>{n === 0 ? 'Indicados em breve' : `${n} ${n === 1 ? 'indicado' : 'indicados'}`}</span>
+                  </a>
+                </li>
               )
             })}
+          </ul>
+        </div>
+      </section>
+
+      {/* 3. Indicados */}
+      <section className="section" aria-labelledby="indicados-titulo">
+        <div className="wrap">
+          <h2 className="section-title" id="indicados-titulo">Indicados</h2>
+          {CATEGORIAS_AWARDS.map((c) => {
+            const lista = indicadosDe(c)
+            return (
+              <div key={c.id} id={`indicados-${c.id}`} className="aw-bloco">
+                <h3>{c.nome}</h3>
+                {lista.length === 0 ? (
+                  <p>Os indicados desta categoria serão divulgados em breve.</p>
+                ) : (
+                  <div className="card-grid">
+                    {lista.map((p) => (
+                      <ProjetoCard
+                        key={p.id}
+                        projeto={p}
+                        variante={VARIANTES[PROJETOS.indexOf(p) % VARIANTES.length]}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* 4. Votação */}
+      <section className="section section-mist" id="votacao" aria-labelledby="votacao-titulo">
+        <div className="wrap">
+          <div className="aw-votacao">
+            <h2 id="votacao-titulo">Votação</h2>
+            <span className={`status status-${estado}`}>{ROTULOS[estado]}</span>
+            <p>{periodo}</p>
+            {podeVotar ? (
+              <a className="btn" href={VOTACAO.url} target="_blank" rel="noopener noreferrer">
+                Votar
+                <span className="visually-hidden"> no CEJLL Awards (abre em nova aba)</span>
+              </a>
+            ) : (
+              <button className="btn" type="button" disabled>Votação não disponível</button>
+            )}
           </div>
         </div>
       </section>
 
-      <section className="section" id="votacao" aria-labelledby="votacao-titulo">
-        <div className="wrap awards-texto">
-          <h2 className="section-title" id="votacao-titulo">Votação</h2>
-          <span className={`status status-${estado}`}>{ROTULOS_VOTACAO[estado]}</span>
-          <p>{textoVotacao(estado)}</p>
-          {estado === 'aberta' && VOTACAO.url ? (
-            <a className="btn" href={VOTACAO.url} target="_blank" rel="noopener noreferrer">
-              Votar
-              <span className="visually-hidden"> no CEJLL Awards (abre em nova aba)</span>
-            </a>
-          ) : (
-            <button className="btn" type="button" disabled>
-              Votação não disponível
-            </button>
-          )}
-        </div>
-      </section>
-
-      <section className="section section-mist" id="resultado" aria-labelledby="resultado-titulo">
+      {/* 5. Resultado (só depois da cerimônia) */}
+      <section className="section" aria-labelledby="resultado-titulo">
         <div className="wrap">
           <h2 className="section-title" id="resultado-titulo">Resultado</h2>
-          {RESULTADO.publicado && RESULTADO.vencedores.length > 0 ? (
-            <div className="categorias">
-              {RESULTADO.vencedores.map((v) => {
-                const projeto = PROJETOS.find((p) => p.id === v.projetoId)
-                return (
-                  <article key={v.categoria} className="categoria vencedor">
-                    <h3>{v.categoria}</h3>
-                    <p>
-                      {projeto ? (
-                        <Link to={`/projetos/${projeto.id}`}>{projeto.nome}</Link>
-                      ) : (
-                        v.projetoId
-                      )}
-                    </p>
-                    {v.mencao && <p>{v.mencao}</p>}
-                  </article>
-                )
-              })}
-            </div>
+
+          {!RESULTADO.publicado ? (
+            <p>Os resultados serão divulgados depois da cerimônia de encerramento.</p>
           ) : (
-            <p className="awards-texto">
-              O resultado será divulgado depois da cerimônia de encerramento, com os vencedores
-              de cada categoria, os projetos premiados e as fotos da premiação.
-            </p>
+            <>
+              <ul className="aw-vencedores">
+                {RESULTADO.vencedores.map((v) => {
+                  const categoria = CATEGORIAS_AWARDS.find((c) => c.id === v.categoria)
+                  const projeto = PROJETOS.find((p) => p.id === v.projetoId)
+                  if (!categoria || !projeto) return null
+                  const mencoes = (v.mencoes || [])
+                    .map((id) => PROJETOS.find((p) => p.id === id))
+                    .filter(Boolean)
+                  return (
+                    <li key={v.categoria} className="aw-vencedor">
+                      <span className="aw-premio"><span aria-hidden="true">★</span> Vencedor</span>
+                      <h3>{categoria.nome}</h3>
+                      <Link to={`/projetos/${projeto.id}`}>{projeto.nome}</Link>
+                      {mencoes.length > 0 && (
+                        <p className="aw-mencao">
+                          Menção honrosa:{' '}
+                          {mencoes.map((m, i) => (
+                            <span key={m.id}>
+                              {i > 0 && ', '}
+                              <Link to={`/projetos/${m.id}`}>{m.nome}</Link>
+                            </span>
+                          ))}
+                        </p>
+                      )}
+                    </li>
+                  )
+                })}
+              </ul>
+
+              <h3 className="aw-sub">Fotos da premiação</h3>
+              <div className="quem-fotos">
+                {Array.from({ length: RESULTADO.fotos }, (_, i) => (
+                  <div
+                    key={i}
+                    className="galeria-item"
+                    role="img"
+                    aria-label={`Espaço reservado para a foto da premiação ${i + 1}`}
+                  >
+                    Foto da premiação {i + 1}
+                  </div>
+                ))}
+              </div>
+            </>
           )}
         </div>
       </section>

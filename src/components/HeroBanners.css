@@ -1,0 +1,65 @@
+.hero {
+  position: relative;
+}
+
+/* os banners 2 em diante usam <h2>, com o mesmo visual do <h1> do primeiro */
+.hero .slide h2 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(3.4rem, 12vw, 8rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* banner com foto de fundo */
+.hero .slide-com-imagem {
+  background-size: cover;
+  background-position: center;
+}
+
+.hero .slide-com-imagem::after {
+  display: none;
+}
+
+/* no banner de fundo rosa, o botão rosa sumiria: usa azul-marinho */
+.hero .slide-c .btn {
+  background: var(--navy);
+}
+
+.hero .slide-c .btn:hover {
+  background: var(--gray-800);
+}
+
+/* botão de pausar a troca automática */
+.hero-pausa {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 10;
+  min-height: 44px;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--white);
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--white);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hero-pausa:hover {
+  background: var(--gray-800);
+}
+
+.hero-pausa:focus-visible {
+  outline-color: var(--white);
+}
+
+@media (max-width: 640px) {
+  .hero-pausa {
+    right: 0.5rem;
+    bottom: 2.4rem;
+  }
+}

@@ -31,3 +31,63 @@
   font-size: 0.9rem;
   font-weight: 600;
 }
+
+/* busca com lupa */
+.proj-busca {
+  position: relative;
+  max-width: 560px;
+  margin-top: 1.5rem;
+}
+
+.proj-busca svg {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  color: var(--navy);
+  pointer-events: none;
+}
+
+.proj-busca input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.5rem 1rem 0.5rem 2.8rem;
+  border: 2px solid var(--navy);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--gray-800);
+  font: inherit;
+}
+
+/* animação leve ao mostrar os cartões */
+@keyframes surgir {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.proj-grid > .card {
+  animation: surgir 0.3s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proj-grid > .card {
+    animation: none;
+  }
+}
+
+.proj-vazio {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.proj-vazio p {
+  margin: 0 auto 1rem;
+}

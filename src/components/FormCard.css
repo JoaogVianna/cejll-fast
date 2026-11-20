@@ -71,3 +71,111 @@
   border-color: var(--gray-800);
   color: var(--gray-800);
 }
+
+/* ícone e faixa de cor de cada formulário */
+.card.form-card {
+  border-top-width: 10px;
+}
+
+.form-navy { border-top-color: var(--navy); }
+.form-pink { border-top-color: var(--pink); }
+.form-gray { border-top-color: var(--gray-800); }
+
+.form-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-icone {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: var(--white);
+}
+
+.form-icone svg {
+  width: 30px;
+  height: 30px;
+}
+
+.form-navy .form-icone { background: var(--navy); }
+.form-pink .form-icone { background: var(--pink); }
+.form-gray .form-icone { background: var(--gray-800); }
+
+/* hover sutil, só onde existe mouse */
+@media (hover: hover) {
+  .card.form-card {
+    transition: transform 0.2s;
+  }
+
+  .card.form-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card.form-card {
+    transition: none;
+  }
+
+  .card.form-card:hover {
+    transform: none;
+  }
+}
+
+/* ícone e faixa de cor de cada formulário */
+.card.form-card {
+  border-top-width: 10px;
+}
+
+.form-navy { border-top-color: var(--navy); }
+.form-pink { border-top-color: var(--pink); }
+.form-gray { border-top-color: var(--gray-800); }
+
+.form-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-icone {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: var(--white);
+}
+
+.form-icone svg {
+  width: 30px;
+  height: 30px;
+}
+
+.form-navy .form-icone { background: var(--navy); }
+.form-pink .form-icone { background: var(--pink); }
+.form-gray .form-icone { background: var(--gray-800); }
+
+/* hover sutil, só onde existe mouse */
+@media (hover: hover) {
+  .card.form-card {
+    transition: transform 0.2s;
+  }
+
+  .card.form-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card.form-card {
+    transition: none;
+  }
+
+  .card.form-card:hover {
+    transform: none;
+  }
+}

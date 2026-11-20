@@ -23,6 +23,9 @@ export default function Footer() {
                   <Link to={item.href}>{item.label}</Link>
                 </li>
               ))}
+              <li>
+                <Link to="/faq">Perguntas frequentes</Link>
+              </li>
             </ul>
           </div>
 

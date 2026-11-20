@@ -1,33 +1,68 @@
-// Textos da página Sobre. Os textos abaixo são provisórios:
-// troque pelos textos definitivos da organização quando chegarem.
+// Textos da página Sobre. Quando os textos oficiais chegarem, troque aqui.
+// provisorio: true mostra a etiqueta "Texto provisório" na seção; apague a linha quando o texto for o definitivo.
 
-export const O_QUE_E = [
-  'O CEJLL Fest é um evento feito de alunos para alunos. Ele reúne projetos, talentos e produções dos estudantes em um só lugar: estandes, oficinas, apresentações e a competição CEJLL Awards.',
-  'A proposta é dar espaço para que cada aluno mostre o que sabe fazer e conheça o que os colegas estão criando.',
-]
+export const SOBRE = {
+  intro:
+    'Conheça a proposta do CEJLL Fest, o que você vai encontrar por aqui e quem faz o evento acontecer.',
 
-export const OBJETIVOS = [
-  { titulo: 'Networking entre estudantes', texto: 'Aproximar alunos de turmas e interesses diferentes.' },
-  { titulo: 'Incentivo à criação de projetos', texto: 'Estimular os alunos a tirar ideias do papel.' },
-  { titulo: 'Compartilhamento de conhecimentos', texto: 'Trocar o que cada um aprendeu, dentro e fora da sala de aula.' },
-  { titulo: 'Desenvolvimento da comunicação', texto: 'Praticar a forma de explicar e defender uma ideia.' },
-  { titulo: 'Experiência de apresentação', texto: 'Viver a experiência de apresentar um trabalho para o público.' },
-]
+  oQueE: {
+    provisorio: true,
+    paragrafos: [
+      'O CEJLL Fest é um espaço de exposição e valorização dos trabalhos, talentos, ideias e experiências desenvolvidos pelos estudantes do CEJLL, reunindo diferentes áreas e formas de expressão.',
+      'Aqui entra o texto sobre como surgiu a ideia do evento.',
+    ],
+  },
 
-// para: página do site que explica melhor cada parte
-export const COMO_FUNCIONA = [
-  { titulo: 'Estandes', texto: 'Cada projeto aprovado ganha um espaço para ser apresentado aos visitantes.', para: '/projetos', rotulo: 'Ver projetos' },
-  { titulo: 'Oficinas', texto: 'Atividades práticas criadas por alunos para outros alunos.', para: '/oficinas', rotulo: 'Ver oficinas' },
-  { titulo: 'Apresentações', texto: 'Palco para shows, palestras e apresentações dos projetos.', para: '/programacao', rotulo: 'Ver programação' },
-  { titulo: 'CEJLL Awards', texto: 'A competição que premia os melhores projetos de cada categoria.', para: '/awards', rotulo: 'Conhecer o Awards' },
-]
+  proposito: [
+    { icone: '✎', titulo: 'Criatividade', texto: 'Valorizar a criatividade e a produção dos estudantes.' },
+    { icone: '◉', titulo: 'Visibilidade', texto: 'Dar visibilidade aos projetos e trabalhos desenvolvidos na escola.' },
+    { icone: '⇄', titulo: 'Troca', texto: 'Incentivar a troca de conhecimentos e experiências.' },
+    { icone: '⌂', titulo: 'Comunidade', texto: 'Aproximar estudantes, professores e comunidade escolar.' },
+    { icone: '✦', titulo: 'Descobertas', texto: 'Criar um espaço para compartilhar ideias e descobrir novos interesses.' },
+  ],
 
-export const QUEM_PODE = [
-  'O evento é voltado à comunidade escolar.',
-  'A participação de visitantes externos depende da autorização da direção.',
-]
+  experiencias: [
+    {
+      id: 'projetos',
+      titulo: 'Projetos',
+      texto: 'Exposição de jogos, aplicativos, sites, trabalhos artísticos, pesquisas e outras produções dos estudantes.',
+      para: '/projetos',
+      rotulo: 'Ver projetos',
+      variante: 'navy',
+    },
+    {
+      id: 'oficinas',
+      titulo: 'Oficinas e atividades',
+      texto: 'Experiências práticas, oficinas e atividades interativas preparadas pelos alunos.',
+      para: '/oficinas',
+      rotulo: 'Ver oficinas',
+      variante: 'pink',
+    },
+    {
+      id: 'apresentacoes',
+      titulo: 'Apresentações',
+      texto: 'Demonstrações, apresentações de trabalhos, produções culturais e outras atividades realizadas durante o evento.',
+      para: '/programacao',
+      rotulo: 'Ver programação',
+      variante: 'gray',
+    },
+  ],
 
-export const ORGANIZACAO = [
-  'O comitê organizador planeja o evento, conversa com as turmas, organiza os espaços e apoia os participantes.',
-  'Os nomes dos integrantes do comitê serão divulgados aqui.',
-]
+  quem: {
+    provisorio: true,
+    paragrafos: [
+      'O CEJLL Fest é construído coletivamente, com a participação de estudantes, professores e demais colaboradores da escola.',
+      'Aqui entra o texto sobre a organização, e abaixo as fotos dos bastidores.',
+    ],
+    fotos: 3, // quantidade de espaços reservados para fotos
+  },
+
+  // Esta seção só aparece quando existir pelo menos um valor CONFIRMADO.
+  // Deixe valor: null enquanto o dado não estiver confirmado.
+  numeros: [
+    { id: 'projetos', rotulo: 'Projetos apresentados', valor: null },
+    { id: 'estudantes', rotulo: 'Estudantes participantes', valor: null },
+    { id: 'atividades', rotulo: 'Oficinas e atividades', valor: null },
+    { id: 'turmas', rotulo: 'Turmas envolvidas', valor: null },
+  ],
+}

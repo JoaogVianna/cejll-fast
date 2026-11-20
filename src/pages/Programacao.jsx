@@ -1,11 +1,23 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { DIAS, CATEGORIAS_PROG, ATIVIDADES } from '../data/programacao'
+import { OFICINAS } from '../data/oficinas'
 import { useFavoritos } from '../hooks/useFavoritos'
+import { useAgora } from '../hooks/useAgora'
+import { andamento } from '../utils/andamento'
+import { normalizar } from '../utils/normalizar'
 import './Programacao.css'
 
-// tira acentos e maiúsculas para a busca achar "oficina" em "Oficína"
-const normalizar = (texto) =>
-  texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+const ROTULOS = {
+  agora: '● Acontecendo agora',
+  embreve: '◔ Em breve',
+  encerrada: '✕ Encerrada',
+}
+
+// locais que existem na programação, sem repetir e em ordem alfabética
+const LOCAIS = [...new Set(ATIVIDADES.map((a) => a.local).filter(Boolean))].sort((a, b) =>
+  a.localeCompare(b, 'pt-BR'),
+)
 
 const formatarDia = (data) =>
   new Date(data + 'T12:00:00').toLocaleDateString('pt-BR', { day: 'numeric', month: 'long' })
@@ -13,18 +25,24 @@ const formatarDia = (data) =>
 export default function Programacao() {
   const [dia, setDia] = useState(DIAS[0].id)
   const [categoria, setCategoria] = useState('Todas')
+  const [local, setLocal] = useState('Todos')
   const [busca, setBusca] = useState('')
   const [soFavoritas, setSoFavoritas] = useState(false)
   const { favoritos, alternar } = useFavoritos()
+  const agora = useAgora()
+
+  const diaAtual = DIAS.find((d) => d.id === dia)
 
   const visiveis = ATIVIDADES.filter((a) => a.dia === dia)
     .filter((a) => categoria === 'Todas' || a.categoria === categoria)
+    .filter((a) => local === 'Todos' || a.local === local)
     .filter((a) => !soFavoritas || favoritos.includes(a.id))
     .filter((a) => normalizar(a.nome).includes(normalizar(busca)))
     .sort((a, b) => a.inicio.localeCompare(b.inicio))
 
   const limpar = () => {
     setCategoria('Todas')
+    setLocal('Todos')
     setBusca('')
     setSoFavoritas(false)
   }
@@ -40,8 +58,8 @@ export default function Programacao() {
       <section className="section">
         <div className="wrap">
           <p className="lead">
-            Veja os horários de tudo o que acontece no CEJLL Fest e marque as atividades que
-            você não quer perder.
+            Confira a programação do CEJLL Fest e descubra tudo o que está preparado para cada dia
+            do evento.
           </p>
 
           <div className="prog-topo">
@@ -96,6 +114,18 @@ export default function Programacao() {
                 ★ Minha agenda ({favoritos.length})
               </button>
             </div>
+
+            {LOCAIS.length > 0 && (
+              <div className="prog-local">
+                <label htmlFor="filtro-local">Local</label>
+                <select id="filtro-local" value={local} onChange={(e) => setLocal(e.target.value)}>
+                  <option value="Todos">Todos os locais</option>
+                  {LOCAIS.map((l) => (
+                    <option key={l} value={l}>{l}</option>
+                  ))}
+                </select>
+              </div>
+            )}
           </div>
 
           <p className="filtro-resultado" aria-live="polite">
@@ -104,7 +134,7 @@ export default function Programacao() {
 
           {visiveis.length === 0 ? (
             <div className="prog-vazio">
-              <p>Nenhuma atividade encontrada. Tente outro filtro ou outra busca.</p>
+              <p>Nenhuma atividade encontrada para esse dia ou filtro. Tente outra opção.</p>
               <button type="button" className="btn btn-outline" onClick={limpar}>
                 Limpar filtros
               </button>
@@ -113,8 +143,11 @@ export default function Programacao() {
             <ul className="prog-lista">
               {visiveis.map((a) => {
                 const favorita = favoritos.includes(a.id)
+                const estado = andamento(a, diaAtual, agora)
+                const oficina = OFICINAS.find((o) => o.programacaoId === a.id)
+
                 return (
-                  <li key={a.id} className="atividade">
+                  <li key={a.id} className={estado ? `atividade is-${estado}` : 'atividade'}>
                     <div className="atv-hora">
                       <strong>{a.inicio}</strong>
                       <span>até {a.fim}</span>
@@ -122,15 +155,29 @@ export default function Programacao() {
 
                     <div>
                       {a.exemplo && <span className="tag">Exemplo</span>}
+                      {estado && <span className={`estado estado-${estado}`}>{ROTULOS[estado]}</span>}
                       <h3>{a.nome}</h3>
                       <ul className="atv-meta">
                         <li>{a.categoria}</li>
-                        <li>{a.local}</li>
-                        <li>{a.responsavel}</li>
+                        {a.local && (
+                          <li>
+                            Local:{' '}
+                            <Link to={`/mapa?local=${encodeURIComponent(a.local)}`}>
+                              {a.local}
+                              <span className="visually-hidden"> (ver no mapa)</span>
+                            </Link>
+                          </li>
+                        )}
+                        {a.responsavel && <li>{a.responsavel}</li>}
                       </ul>
                       <details>
                         <summary>Ver detalhes</summary>
                         <p>{a.descricao}</p>
+                        {oficina && (
+                          <p>
+                            <Link to={`/oficinas/${oficina.id}`}>Ver a página da atividade</Link>
+                          </p>
+                        )}
                       </details>
                     </div>
 

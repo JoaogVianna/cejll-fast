@@ -1,0 +1,128 @@
+/* ===== Ajustes de responsividade =====
+   Carregado por último (veja o main.jsx), então estas regras valem sobre as outras.
+   Testado de 320px (celular pequeno) até 1440px (computador). */
+
+/* títulos nunca estouram a caixa: se a palavra não couber, ela quebra */
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+/* ---------- Cabeçalho ---------- */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+@media (max-width: 420px) {
+  .brand {
+    font-size: 1.5rem;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .header-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* celulares bem pequenos (320px) */
+@media (max-width: 340px) {
+  .brand {
+    font-size: 1.25rem;
+  }
+
+  .header-actions .btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ---------- Menu lateral ---------- */
+.menu-panel a {
+  font-size: clamp(1.7rem, 8vw, 2.2rem);
+}
+
+/* ---------- Títulos grandes ---------- */
+.page-banner h1 {
+  font-size: clamp(1.9rem, 10vw, 6rem);
+}
+
+.em-breve h1 {
+  font-size: clamp(2rem, 11vw, 3rem);
+}
+
+.hero .slide h1,
+.hero .slide h2 {
+  font-size: clamp(2.4rem, 11vw, 8rem);
+}
+
+/* todos os banners ficam com a altura do mais alto (sem faixa branca embaixo) */
+.hero .swiper-slide {
+  height: auto;
+}
+
+/* ---------- Grades que não cabiam em 320px ---------- */
+.form-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+}
+
+.objetivos,
+.como-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+.objetivo h3,
+.como-item h3 {
+  font-size: clamp(1.15rem, 5.5vw, 1.5rem);
+}
+
+/* contagem regressiva: 2 colunas no celular, para "Segundos" caber */
+@media (max-width: 480px) {
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Tamanho mínimo para tocar (44px) ---------- */
+.voltar {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.atividade summary {
+  padding-block: 0.85rem;
+}
+
+.categoria li a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* só em telas de toque, para não alongar o rodapé no computador */
+@media (pointer: coarse) {
+  .footer ul {
+    gap: 0;
+  }
+
+  .footer a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}

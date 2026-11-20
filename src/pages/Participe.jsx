@@ -14,17 +14,22 @@ export default function Participe() {
   return (
     <>
       <section className="page-banner">
-        <div className="wrap">
-          <h1>Faça parte do CEJLL Fest!</h1>
+        <div className="wrap part-hero">
+          <div>
+            <h1>Participe do CEJLL Fest!</h1>
+            <p className="part-hero-destaque">Faça parte do CEJLL Fest!</p>
+            <p>
+              Quer ajudar a organizar, apresentar um projeto ou criar uma atividade? Existem
+              diferentes formas de participar. Escolha a que mais combina com você e faça sua
+              inscrição!
+            </p>
+          </div>
+          <div className="part-hero-img" aria-hidden="true">Imagem de destaque</div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" aria-label="Formulários de inscrição">
         <div className="wrap">
-          <p className="lead">
-            Existem diferentes maneiras de participar do evento. Você pode ajudar na organização,
-            apresentar um projeto ou criar uma atividade para outros estudantes.
-          </p>
           <div className="form-grid">
             {FORMULARIOS.map((f, i) => (
               <FormCard key={f.id} formulario={f} numero={i + 1} />
@@ -54,6 +59,36 @@ export default function Participe() {
               <p>O formulário não aceita novas inscrições.</p>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="aviso-titulo">
+        <div className="wrap">
+          <h2 className="section-title" id="aviso-titulo">Aviso sobre as inscrições</h2>
+          <p>Todas as propostas passarão por avaliação e organização antes de serem confirmadas.</p>
+          <p className="part-aviso">
+            <strong>Importante:</strong> o envio do formulário não garante automaticamente a
+            participação no evento. As propostas estarão sujeitas à avaliação e autorização da
+            direção e da organização do CEJLL Fest.
+          </p>
+        </div>
+      </section>
+
+      <section className="section section-mist" aria-labelledby="duvida-titulo">
+        <div className="wrap">
+          <div className="part-duvida">
+            <h2 id="duvida-titulo">Ficou com alguma dúvida?</h2>
+            <p>Entre em contato com a organização do CEJLL Fest pelo WhatsApp: (21) 98542-3938.</p>
+            <a
+              className="btn"
+              href="https://wa.me/5521985423938"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chamar no WhatsApp
+              <span className="visually-hidden"> (abre em nova aba)</span>
+            </a>
+          </div>
         </div>
       </section>
     </>

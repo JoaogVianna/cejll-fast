@@ -1,0 +1,135 @@
+.of-hero {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .of-hero {
+    grid-template-columns: 1.3fr 1fr;
+  }
+}
+
+.of-hero p {
+  margin: 1rem 0 0;
+  color: var(--white);
+  font-size: 1.15rem;
+}
+
+.of-hero p.of-hero-destaque {
+  margin-top: 1.25rem;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+}
+
+/* espaço reservado para a imagem de destaque; só aparece em tela larga */
+.of-hero-img {
+  display: none;
+  min-height: 220px;
+  place-items: center;
+  border: 3px dashed rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@media (min-width: 860px) {
+  .of-hero-img {
+    display: grid;
+  }
+}
+
+.busca {
+  margin-bottom: 1rem;
+}
+
+/* selos: atividade livre x atividade com horário (ícone + texto, nunca só cor) */
+.selo {
+  align-self: flex-start;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.selo-livre {
+  background: var(--white);
+  border: 2px solid var(--pink);
+  color: var(--navy);
+}
+
+.selo-marcado {
+  background: var(--navy);
+  border: 2px solid var(--navy);
+  color: var(--white);
+}
+
+.of-info {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+}
+
+/* animação leve ao mostrar os cartões */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.of-grid > .card {
+  animation: aparecer 0.3s ease both;
+}
+
+/* hover sutil, só onde existe mouse; nada importante depende dele */
+@media (hover: hover) {
+  .of-card {
+    transition: transform 0.2s;
+  }
+
+  .of-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .of-grid > .card {
+    animation: none;
+  }
+
+  .of-card {
+    transition: none;
+  }
+
+  .of-card:hover {
+    transform: none;
+  }
+}
+
+.of-cta {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 20px;
+  background: var(--navy);
+  border-bottom: 8px solid var(--pink);
+  color: var(--white);
+}
+
+.of-cta h2 {
+  margin: 0 0 1rem;
+  color: var(--white);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}

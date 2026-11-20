@@ -1,28 +1,20 @@
 import { Link } from 'react-router-dom'
-import Card from './Card'
+import NoticiaCard from './NoticiaCard'
 import { NOTICIAS } from '../data/noticias'
-import { formatarData } from '../utils/formatarData'
+import { ordenarNoticias } from '../utils/ordenarNoticias'
 
-// Na Home aparecem só as 3 notícias mais recentes
-const RECENTES = NOTICIAS.slice(0, 3)
+const VARIANTES = ['pink', 'navy', 'gray']
 
 export default function Noticias() {
+  const recentes = ordenarNoticias(NOTICIAS).slice(0, 3)
+
   return (
     <section className="section section-mist" aria-labelledby="noticias-titulo">
       <div className="wrap">
         <h2 className="section-title" id="noticias-titulo">Notícias</h2>
         <div className="card-grid">
-          {RECENTES.map((n) => (
-            <Card
-              key={n.id}
-              media={n.categoria}
-              variante={n.variante}
-              titulo={n.titulo}
-              texto={n.texto}
-              exemplo={n.exemplo}
-              meta={`${formatarData(n.data)} · ${n.categoria}`}
-              link={{ para: `/noticias/${n.id}`, rotulo: 'Ler notícia' }}
-            />
+          {recentes.map((n, i) => (
+            <NoticiaCard key={n.id} noticia={n} variante={VARIANTES[i % VARIANTES.length]} />
           ))}
         </div>
         <p style={{ marginTop: '2rem' }}>
