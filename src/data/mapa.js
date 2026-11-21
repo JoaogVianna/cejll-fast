@@ -6,7 +6,7 @@
 //
 // PARA USAR A PLANTA REAL:
 //   1. salve a imagem em public/mapa/planta.png
-//   2. troque imagem: null por imagem: '/mapa/planta.png'
+//   2. troque imagem: null por imagem: null
 //   3. ajuste x, y, w, h de cada espaço para ficar por cima do lugar certo na imagem
 //   4. mude exemplo para false
 

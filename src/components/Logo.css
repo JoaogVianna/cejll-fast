@@ -1,0 +1,49 @@
+.logo {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
+.logo-reserva {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.9rem;
+  border: 2px dashed currentColor;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.footer-credito {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+}
+
+.footer-credito a {
+  color: inherit;
+  font-weight: 700;
+}
+
+.header .logo-antigo {
+  height: 44px;
+  border-radius: 8px;
+}
+
+.logo-hero-antigo {
+  height: clamp(72px, 12vw, 120px);
+  margin-bottom: 1rem;
+  border-radius: 12px;
+}
+
+.header .logo {
+  height: 54px;
+  width: auto;
+}
+
+.logo-hero {
+  height: clamp(110px, 18vw, 190px);
+  width: auto;
+  margin-bottom: 1.25rem;
+}

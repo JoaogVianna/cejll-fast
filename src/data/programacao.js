@@ -10,8 +10,7 @@
 
 export const DIAS = [
   // data: '2027-05-20' quando definida. Sem data, os selos "Acontecendo agora" etc. não aparecem.
-  { id: 'dia1', rotulo: 'Dia 1', data: null },
-  { id: 'dia2', rotulo: 'Dia 2', data: null },
+  { id: 'dia1', rotulo: '26 de novembro', data: '2026-11-26' },
 ]
 
 export const CATEGORIAS_PROG = [
@@ -76,19 +75,19 @@ export const ATIVIDADES = [
   },
   {
     id: 'palestra-dia2',
-    dia: 'dia2',
+    dia: 'dia1',
     nome: 'Palestra de abertura do dia',
     inicio: '09:30',
     fim: '10:30',
     local: 'Auditório',
     responsavel: null,
     categoria: 'Palestras',
-    descricao: 'Conversa de abertura do segundo dia do evento.',
+    descricao: 'Conversa sobre o evento e a participação dos alunos.',
     exemplo: true,
   },
   {
     id: 'oficina-programacao',
-    dia: 'dia2',
+    dia: 'dia1',
     nome: 'Oficina de programação',
     inicio: '11:00',
     fim: '12:00',
@@ -100,7 +99,7 @@ export const ATIVIDADES = [
   },
   {
     id: 'apresentacao-projetos',
-    dia: 'dia2',
+    dia: 'dia1',
     nome: 'Apresentações dos projetos',
     inicio: '13:30',
     fim: '14:30',
@@ -112,7 +111,7 @@ export const ATIVIDADES = [
   },
   {
     id: 'cerimonia-awards',
-    dia: 'dia2',
+    dia: 'dia1',
     nome: 'Cerimônia do CEJLL Awards',
     inicio: '15:00',
     fim: '16:00',

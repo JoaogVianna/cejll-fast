@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800">
-  <rect width="1280" height="800" fill="#30343F E83E8C"/>
-  <circle cx="1050" cy="150" r="260" fill="#"/>
-  <text x="80" y="720" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">Imagem de exemplo 3</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Ilustração decorativa">
+  <rect width="800" height="450" fill="#F2F3F7"/>
+  <circle cx="200" cy="225" r="140" fill="#202A44"/>
+  <circle cx="330" cy="225" r="140" fill="#E83E8C" fill-opacity="0.85"/>
+  <rect x="520" y="110" width="190" height="40" rx="20" fill="#202A44"/>
+  <rect x="520" y="190" width="150" height="40" rx="20" fill="#E83E8C"/>
+  <rect x="520" y="270" width="210" height="40" rx="20" fill="#30343F" fill-opacity="0.5"/>
 </svg>

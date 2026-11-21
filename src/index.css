@@ -112,3 +112,22 @@ h1 {
 .menu-close:focus-visible {
   outline-color: var(--white);
 }
+
+.galeria-item,
+[class*="-hero-img"] {
+  font-size: 0 !important;
+  color: transparent !important;
+  border: 0 !important;
+  border-radius: 16px !important;
+  min-height: 200px !important;
+  background:
+    radial-gradient(circle at 18% 28%, rgba(232, 62, 140, 0.95) 0 64px, transparent 65px),
+    radial-gradient(circle at 82% 72%, rgba(232, 62, 140, 0.35) 0 120px, transparent 121px),
+    radial-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2.5px) 0 0 / 22px 22px,
+    linear-gradient(135deg, #202a44, #30395c) !important;
+}
+
+.header .header-inner {
+  max-width: none !important;
+  padding-inline: clamp(1rem, 3vw, 2.5rem) !important;
+}

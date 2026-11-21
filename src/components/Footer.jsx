@@ -1,3 +1,4 @@
+import './Logo.css'
 import { Link } from 'react-router-dom'
 import { MENU } from '../data/menu'
 import { FORMULARIOS } from '../data/formularios'
@@ -50,6 +51,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} CEJLL Fest</p>
         </div>
       </div>
+      <p className="footer-credito">Arte do evento: <a href="https://instagram.com/yunyunilove.you" target="_blank" rel="noopener noreferrer">@yunyunilove.you</a></p>
     </footer>
   )
 }

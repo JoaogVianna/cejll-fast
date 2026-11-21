@@ -14,8 +14,8 @@ export const FORMULARIOS = [
     botao: 'Inscrever-se',
     url: 'https://forms.gle/gzjQHoLVnMQRDXa67',
     variante: 'navy',
-    abre: null,
-    fecha: null,
+    abre: '2026-11-01T00:00:00-03:00',
+    fecha: '2026-11-24T23:59:00-03:00',
     status: null,
   },
   {
@@ -28,8 +28,8 @@ export const FORMULARIOS = [
     botao: 'Inscrever meu projeto',
     url: 'https://forms.gle/uiRZ1FrcSVRDgtGCA',
     variante: 'pink',
-    abre: null,
-    fecha: null,
+    abre: '2026-11-01T00:00:00-03:00',
+    fecha: '2026-11-24T23:59:00-03:00',
     status: null,
   },
   {
@@ -42,8 +42,8 @@ export const FORMULARIOS = [
     botao: 'Inscrever atividade',
     url: 'https://forms.gle/jQ8CunTAFctF49ETA',
     variante: 'gray',
-    abre: null,
-    fecha: null,
+    abre: '2026-11-01T00:00:00-03:00',
+    fecha: '2026-11-24T23:59:00-03:00',
     status: null,
   },
 ]

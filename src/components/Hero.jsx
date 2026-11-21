@@ -7,6 +7,7 @@ import { BANNERS } from '../data/banners'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import Logo from './Logo'
 import './Hero.css'
 import './HeroBanners.css'
 
@@ -65,6 +66,7 @@ export default function Hero() {
               }
             >
               <div className="slide-inner">
+                {i === 0 && <Logo className="logo-hero" />}
                 <Titulo>{b.titulo}</Titulo>
                 <p className="slide-tagline">{b.frase}</p>
                 {b.data && <p className="slide-date">{b.data}</p>}

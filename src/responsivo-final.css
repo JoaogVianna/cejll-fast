@@ -1,0 +1,205 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+h1, h2, h3, h4, p, li, a, span, strong {
+  overflow-wrap: break-word;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+  font-size: 16px;
+}
+
+.btn,
+.filtro,
+select,
+input[type='search'],
+input[type='text'],
+input[type='time'] {
+  min-height: 44px;
+}
+
+.btn {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
+.header-inner,
+.footer-bottom {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+.menu-panel {
+  width: min(86vw, 380px);
+  max-height: 100vh;
+  max-height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+[class*='filtros'],
+[class*='chips'],
+[class*='abas'],
+[class*='tabs'],
+.mapa-controles,
+.mapa-momento,
+.mapa-zoom,
+.mapa-campos {
+  flex-wrap: wrap;
+}
+
+.mapa-scroll {
+  touch-action: pan-x pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+.proj-img,
+.projeto-img,
+.noticia-img,
+.noticia-principal {
+  width: 100%;
+  height: auto;
+}
+
+.page-banner h1,
+.hero .slide h1,
+.slide h1,
+.slide-inner h1 {
+  font-size: clamp(2.1rem, 9vw, 6rem);
+  line-height: 1.02;
+}
+
+@media (max-width: 900px) {
+  .mapa-layout,
+  .part-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  [class*='-hero-img'] {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-block: 2.5rem;
+  }
+
+  .wrap {
+    padding-inline: 1rem;
+  }
+
+  .header .logo {
+    height: 40px !important;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .header-actions .btn {
+    min-height: 40px;
+    padding: 0.4rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .logo-hero {
+    height: clamp(80px, 24vw, 120px) !important;
+  }
+
+  .hero-swiper .swiper-button-prev,
+  .hero-swiper .swiper-button-next {
+    display: none;
+  }
+
+  .hero-pausa {
+    max-width: calc(100% - 1.5rem);
+    font-size: 0.8rem;
+  }
+
+  .slide-inner {
+    padding-inline: 1.25rem;
+  }
+
+  .countdown-grid {
+    gap: 0.4rem;
+  }
+
+  .countdown-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+  }
+
+  .card-grid,
+  .form-grid,
+  .legend {
+    grid-template-columns: 1fr !important;
+  }
+
+  .mapa-painel h2 {
+    font-size: 1.6rem;
+  }
+
+  .mapa-svg {
+    min-width: 560px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header .logo {
+    height: 34px !important;
+  }
+
+  .header-actions .btn {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .countdown-num {
+    font-size: clamp(1.7rem, 11vw, 2.4rem);
+  }
+}
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 112.5%;
+  }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .menu-panel ul {
+    gap: 0.25rem;
+  }
+
+  .section {
+    padding-block: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

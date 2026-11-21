@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800">
-  <rect width="1280" height="800" fill="#E83E8C 202A44"/>
-  <circle cx="1050" cy="150" r="260" fill="#"/>
-  <text x="80" y="720" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">Imagem de exemplo 2</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Ilustração decorativa">
+  <rect width="800" height="450" fill="#E83E8C"/>
+  <circle cx="650" cy="110" r="110" fill="#202A44" fill-opacity="0.25"/>
+  <polygon points="120,360 260,120 400,360" fill="#202A44"/>
+  <polygon points="300,360 450,170 600,360" fill="#F2F3F7"/>
+  <circle cx="560" cy="120" r="40" fill="#F2F3F7"/>
 </svg>

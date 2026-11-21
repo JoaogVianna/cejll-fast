@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { MENU } from '../data/menu'
+import Logo from './Logo'
 import './Header.css'
 
 export default function Header() {
@@ -10,8 +11,8 @@ export default function Header() {
     <>
       <header className="header">
         <div className="header-inner">
-          <Link className="brand" to="/">
-            CEJLL<span>Fest</span>
+          <Link className="brand" to="/" aria-label="CEJLL Fest, página inicial">
+            <Logo />
           </Link>
 
           <div className="header-actions">
