@@ -14,7 +14,7 @@ export const PLANTA = {
   imagem: null,
   largura: 1000,
   altura: 480,
-  exemplo: true,
+  exemplo: false,
 }
 
 export const ESPACOS = [

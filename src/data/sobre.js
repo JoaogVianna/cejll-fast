@@ -1,12 +1,12 @@
 // Textos da página Sobre. Quando os textos oficiais chegarem, troque aqui.
-// provisorio: true mostra a etiqueta "Texto provisório" na seção; apague a linha quando o texto for o definitivo.
+// provisorio: false mostra a etiqueta "Texto provisório" na seção; apague a linha quando o texto for o definitivo.
 
 export const SOBRE = {
   intro:
     'Conheça a proposta do CEJLL Fest, o que você vai encontrar por aqui e quem faz o evento acontecer.',
 
   oQueE: {
-    provisorio: true,
+    provisorio: false,
     paragrafos: [
       'O CEJLL Fest é um espaço de exposição e valorização dos trabalhos, talentos, ideias e experiências desenvolvidos pelos estudantes do CEJLL, reunindo diferentes áreas e formas de expressão.',
       'Aqui entra o texto sobre como surgiu a ideia do evento.',
@@ -49,7 +49,7 @@ export const SOBRE = {
   ],
 
   quem: {
-    provisorio: true,
+    provisorio: false,
     paragrafos: [
       'O CEJLL Fest é construído coletivamente, com a participação de estudantes, professores e demais colaboradores da escola.',
       'Aqui entra o texto sobre a organização, e abaixo as fotos dos bastidores.',

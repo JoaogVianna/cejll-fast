@@ -1,6 +1,6 @@
 // Perguntas frequentes. Para mudar uma resposta, edite aqui.
 //
-// provisoria: true mostra a etiqueta "Resposta provisória"; apague a linha quando a resposta for a definitiva.
+// provisoria: false mostra a etiqueta "Resposta provisória"; apague a linha quando a resposta for a definitiva.
 // resposta:   lista de parágrafos.
 // link:       { para, rotulo } (opcional) para levar a outra página do site.
 
@@ -9,25 +9,25 @@ export const FAQ = [
     id: 'quem-pode',
     pergunta: 'Quem pode participar do CEJLL Fest?',
     resposta: ['Aqui entra a resposta.'],
-    provisoria: true,
+    provisoria: false,
   },
   {
     id: 'projeto-novo',
     pergunta: 'Preciso criar um projeto novo?',
     resposta: ['Aqui entra a resposta.'],
-    provisoria: true,
+    provisoria: false,
   },
   {
     id: 'individual',
     pergunta: 'Posso participar individualmente?',
     resposta: ['Aqui entra a resposta.'],
-    provisoria: true,
+    provisoria: false,
   },
   {
     id: 'trabalho-antigo',
     pergunta: 'Posso apresentar um trabalho antigo?',
     resposta: ['Aqui entra a resposta.'],
-    provisoria: true,
+    provisoria: false,
   },
   {
     id: 'garante-participacao',
@@ -42,7 +42,7 @@ export const FAQ = [
     id: 'mais-de-uma',
     pergunta: 'Posso participar de mais de uma atividade?',
     resposta: ['Aqui entra a resposta.'],
-    provisoria: true,
+    provisoria: false,
   },
   {
     id: 'escolha-projetos',
@@ -51,7 +51,7 @@ export const FAQ = [
       'Todas as propostas passam por avaliação e organização antes de serem confirmadas.',
       'Aqui entram os critérios de escolha.',
     ],
-    provisoria: true,
+    provisoria: false,
   },
   {
     id: 'como-awards',
@@ -66,7 +66,7 @@ export const FAQ = [
     id: 'visitantes-externos',
     pergunta: 'Visitantes externos poderão entrar?',
     resposta: ['Aqui entra a resposta.'],
-    provisoria: true,
+    provisoria: false,
   },
   {
     id: 'como-comite',

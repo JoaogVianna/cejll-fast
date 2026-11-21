@@ -168,6 +168,32 @@ export default function Mapa() {
             <div>
               {PLANTA.exemplo && <span className="tag">Mapa esquemático de exemplo</span>}
 
+              {/* celular: lista de espaços em botões grandes (o desenho fica para telas maiores) */}
+              <ul className="mapa-espacos">
+                {ESPACOS.map((e) => {
+                  const status = momento ? statusDoEspaco(e, momento) : 'sem'
+                  const sel = e.id === selecionado
+                  return (
+                    <li key={e.id}>
+                      <button
+                        type="button"
+                        className={`mapa-espaco-btn mapa-espaco-${status}${sel ? ' sel' : ''}`}
+                        aria-pressed={sel}
+                        onClick={() => {
+                          setSelecionado(e.id)
+                          setTimeout(() => {
+                            document.querySelector('.mapa-painel')?.scrollIntoView({ block: 'start' })
+                          }, 50)
+                        }}
+                      >
+                        <strong>{e.nome}</strong>
+                        <span>{ROTULOS[status]}</span>
+                      </button>
+                    </li>
+                  )
+                })}
+              </ul>
+
               {/* a planta: arraste para mover; use os botões para ampliar */}
               <div className="mapa-scroll" tabIndex={0} aria-label="Planta do evento, role para mover">
                 <svg

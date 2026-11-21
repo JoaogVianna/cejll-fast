@@ -5,7 +5,7 @@
 // (o texto precisa ser igual ao "nome" de uma categoria abaixo).
 
 // Enquanto as categorias forem sugestão, deixe true. Quando forem as oficiais, mude para false.
-export const CATEGORIAS_EXEMPLO = true
+export const CATEGORIAS_EXEMPLO = false
 
 export const CATEGORIAS_AWARDS = [
   { id: 'melhor-jogo', nome: 'Melhor jogo' },

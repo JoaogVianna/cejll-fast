@@ -34,7 +34,7 @@ export const ATIVIDADES = [
     responsavel: 'Comitê de organização',
     categoria: 'Outras',
     descricao: 'Abertura oficial do evento e início das visitas aos estandes.',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'oficina-desenho',
@@ -47,7 +47,7 @@ export const ATIVIDADES = [
     categoria: 'Oficinas',
     descricao:
       'Atividade prática de desenho para alunos interessados em desenvolver suas habilidades. Materiais informados pelo responsável.',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'competicao-jogos',
@@ -59,7 +59,7 @@ export const ATIVIDADES = [
     responsavel: null,
     categoria: 'Competições',
     descricao: 'Competição entre alunos nos jogos escolhidos pela organização.',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'apresentacao-musical-prog',
@@ -71,7 +71,7 @@ export const ATIVIDADES = [
     responsavel: null,
     categoria: 'Música',
     descricao: 'Apresentação ao vivo de alunos e bandas da escola.',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'palestra-dia2',
@@ -83,7 +83,7 @@ export const ATIVIDADES = [
     responsavel: null,
     categoria: 'Palestras',
     descricao: 'Conversa sobre o evento e a participação dos alunos.',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'oficina-programacao',
@@ -95,7 +95,7 @@ export const ATIVIDADES = [
     responsavel: null,
     categoria: 'Oficinas',
     descricao: 'Primeiros passos para criar uma página web do zero.',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'apresentacao-projetos',
@@ -107,7 +107,7 @@ export const ATIVIDADES = [
     responsavel: null,
     categoria: 'Apresentações',
     descricao: 'Cada equipe apresenta seu projeto para o público.',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'cerimonia-awards',
@@ -119,6 +119,6 @@ export const ATIVIDADES = [
     responsavel: 'Comitê de organização',
     categoria: 'Outras',
     descricao: 'Anúncio dos vencedores de cada categoria do CEJLL Awards.',
-    exemplo: true,
+    exemplo: false,
   },
 ]

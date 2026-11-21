@@ -1,4 +1,4 @@
-// Destaques da Home. "exemplo: true" mostra a etiqueta "Exemplo".
+// Destaques da Home. "exemplo: false" mostra a etiqueta "Exemplo".
 // variante: 'navy', 'pink' ou 'gray' (cor do bloco de cima do cartão)
 export const DESTAQUES = [
   {
@@ -8,7 +8,7 @@ export const DESTAQUES = [
     botao: 'Ver como participar',
     para: '/participe',
     variante: 'navy',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const DESTAQUES = [
     botao: 'Ver projetos',
     para: '/projetos',
     variante: 'pink',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 3,
@@ -26,6 +26,6 @@ export const DESTAQUES = [
     botao: 'Conhecer o Awards',
     para: '/awards',
     variante: 'gray',
-    exemplo: true,
+    exemplo: false,
   },
 ]

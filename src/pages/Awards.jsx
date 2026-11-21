@@ -43,9 +43,9 @@ export default function Awards() {
 
       <section className="section" aria-labelledby="oque-awards-titulo">
         <div className="wrap">
-          <span className="tag">Texto provisório</span>
+          
           <h2 className="section-title" id="oque-awards-titulo">O que é o CEJLL Awards?</h2>
-          <p>Aqui entra o texto explicando o que é o CEJLL Awards, qual é a sua finalidade e como funciona a competição.</p>
+          <p>O CEJLL Awards reconhece os destaques do CEJLL Fest. Os projetos do evento concorrem em diferentes categorias, e aqui você acompanha os indicados e a votação.</p>
           <p className="aw-aviso">
             <strong>Importante:</strong> participar da exposição não significa obrigatoriamente
             participar da competição.

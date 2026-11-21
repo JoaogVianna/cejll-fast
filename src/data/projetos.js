@@ -44,7 +44,7 @@ export const PROJETOS = [
     localizacao: null,
     horarios: null,
     awards: 'Melhor jogo',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'app-estudos',
@@ -61,7 +61,7 @@ export const PROJETOS = [
     localizacao: null,
     horarios: null,
     awards: 'Melhor aplicativo',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'site-receitas',
@@ -78,7 +78,7 @@ export const PROJETOS = [
     localizacao: null,
     horarios: null,
     awards: null,
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'serie-ilustracoes',
@@ -98,7 +98,7 @@ export const PROJETOS = [
     localizacao: null,
     horarios: null,
     awards: null,
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'apresentacao-musical',
@@ -115,7 +115,7 @@ export const PROJETOS = [
     localizacao: null,
     horarios: null,
     awards: 'Melhor apresentação',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'experimento-solar',
@@ -135,6 +135,6 @@ export const PROJETOS = [
     localizacao: null,
     horarios: null,
     awards: 'Melhor projeto experimental',
-    exemplo: true,
+    exemplo: false,
   },
 ]

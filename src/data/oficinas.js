@@ -39,7 +39,7 @@ export const OFICINAS = [
     responsaveis: null,
     inscricao: 'previa',
     vagas: 'limitadas',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'oficina-de-programacao',
@@ -56,7 +56,7 @@ export const OFICINAS = [
     responsaveis: null,
     inscricao: 'previa',
     vagas: 'limitadas',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'cabine-de-fotos',
@@ -72,7 +72,7 @@ export const OFICINAS = [
     responsaveis: null,
     inscricao: 'nao',
     vagas: 'abertas',
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'torneio-de-jogos',
@@ -88,7 +88,7 @@ export const OFICINAS = [
     responsaveis: null,
     inscricao: null,
     vagas: null,
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'mostra-de-teatro',
@@ -104,7 +104,7 @@ export const OFICINAS = [
     responsaveis: null,
     inscricao: null,
     vagas: null,
-    exemplo: true,
+    exemplo: false,
   },
   {
     id: 'cantinho-da-leitura',
@@ -120,6 +120,6 @@ export const OFICINAS = [
     responsaveis: null,
     inscricao: 'nao',
     vagas: 'abertas',
-    exemplo: true,
+    exemplo: false,
   },
 ]
