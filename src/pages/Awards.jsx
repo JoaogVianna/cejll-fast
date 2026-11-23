@@ -18,7 +18,7 @@ const dia = (iso) =>
 
 export default function Awards() {
   // os indicados de cada categoria vêm dos projetos que declaram concorrer a ela
-  const indicadosDe = (categoria) => PROJETOS.filter((p) => p.awards === categoria.nome)
+  const indicadosDe = (categoria) => PROJETOS.filter((p) => [].concat(p.awards || []).includes(categoria.nome))
 
   const estado = situacaoDoPeriodo(VOTACAO)
   const podeVotar = estado === 'aberta' && VOTACAO.url
@@ -45,11 +45,8 @@ export default function Awards() {
         <div className="wrap">
           
           <h2 className="section-title" id="oque-awards-titulo">O que é o CEJLL Awards?</h2>
-          <p>O CEJLL Awards reconhece os destaques do CEJLL Fest. Os projetos do evento concorrem em diferentes categorias, e aqui você acompanha os indicados e a votação.</p>
-          <p className="aw-aviso">
-            <strong>Importante:</strong> participar da exposição não significa obrigatoriamente
-            participar da competição.
-          </p>
+          <p>O CEJLL Awards é uma premiação criada para reconhecer os destaques do CEJLL Fest, valorizando a criatividade, o talento e o trabalho dos estudantes envolvidos nos projetos e atividades do evento.</p>
+          <p className="aw-aviso">A premiação busca valorizar não apenas os vencedores das competições, mas também o esforço e a dedicação de todos os estudantes que contribuíram para a realização do CEJLL Fest.</p>
         </div>
       </section>
 
@@ -68,7 +65,7 @@ export default function Awards() {
                 <li key={c.id}>
                   <a href={`#indicados-${c.id}`}>
                     <strong>{c.nome}</strong>
-                    <span>{n === 0 ? 'Indicados em breve' : `${n} ${n === 1 ? 'indicado' : 'indicados'}`}</span>
+                    <span>{n === 0 ? (c.tipo === 'campeonato' ? 'Campeonato' : 'Indicados em breve') : `${n} ${n === 1 ? 'indicado' : 'indicados'}`}</span>
                   </a>
                 </li>
               )
@@ -86,8 +83,9 @@ export default function Awards() {
             return (
               <div key={c.id} id={`indicados-${c.id}`} className="aw-bloco">
                 <h3>{c.nome}</h3>
+                {c.descricao && <p>{c.descricao}</p>}
                 {lista.length === 0 ? (
-                  <p>Os indicados desta categoria serão divulgados em breve.</p>
+                  <p>{c.tipo === 'campeonato' ? 'O vencedor será anunciado depois da disputa, na cerimônia de encerramento.' : 'Os indicados desta categoria serão divulgados em breve.'}</p>
                 ) : (
                   <div className="card-grid">
                     {lista.map((p) => (

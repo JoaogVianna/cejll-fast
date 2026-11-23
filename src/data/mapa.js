@@ -6,9 +6,8 @@
 //
 // PARA USAR A PLANTA REAL:
 //   1. salve a imagem em public/mapa/planta.png
-//   2. troque imagem: null por imagem: null
+//   2. troque imagem: null por imagem: '/mapa/planta.png'
 //   3. ajuste x, y, w, h de cada espaço para ficar por cima do lugar certo na imagem
-//   4. mude exemplo para false
 
 export const PLANTA = {
   imagem: null,
@@ -18,11 +17,11 @@ export const PLANTA = {
 }
 
 export const ESPACOS = [
-  { id: 'entrada', nome: 'Entrada principal', x: 40, y: 40, w: 240, h: 200 },
-  { id: 'patio', nome: 'Pátio', x: 300, y: 40, w: 400, h: 200 },
-  { id: 'auditorio', nome: 'Auditório', x: 720, y: 40, w: 240, h: 200 },
-  { id: 'arte', nome: 'Sala de artes', x: 40, y: 270, w: 240, h: 170 },
-  { id: 'lab', nome: 'Laboratório de informática', x: 300, y: 270, w: 240, h: 170 },
-  { id: 'biblioteca', nome: 'Biblioteca', x: 560, y: 270, w: 190, h: 170 },
-  { id: 'quadra', nome: 'Quadra', x: 770, y: 270, w: 190, h: 170 },
+  { id: 'auditorio', nome: 'Auditório', x: 40, y: 40, w: 300, h: 190 },
+  { id: 'frente-auditorio', nome: 'Frente do auditório', x: 40, y: 250, w: 300, h: 190 },
+  { id: 'convivencia', nome: 'Convivência', x: 360, y: 40, w: 300, h: 190 },
+  { id: 'germinal', nome: 'Germinal', x: 360, y: 250, w: 300, h: 190 },
+  { id: 'sala-21', nome: 'Sala 21', x: 680, y: 40, w: 280, h: 120 },
+  { id: 'sala-22', nome: 'Sala 22', x: 680, y: 180, w: 280, h: 120 },
+  { id: 'segundo-andar', nome: 'Entrada do 2º andar', x: 680, y: 320, w: 280, h: 120 },
 ]

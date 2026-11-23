@@ -32,7 +32,7 @@ export default function ProjetoDetalhe() {
     ['Categoria', p.categoria],
     ['Localização', p.localizacao],
     ['Horários', p.horarios],
-    ['CEJLL Awards', p.awards],
+    ['CEJLL Awards', p.awards ? [].concat(p.awards).join(', ') : null],
   ].filter(([, valor]) => valor)
 
   const faltaAlgo = !p.participantes || !p.turma
