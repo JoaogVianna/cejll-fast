@@ -9,7 +9,6 @@ export const SOBRE = {
     provisorio: false,
     paragrafos: [
       'O CEJLL Fest é um espaço de exposição e valorização dos trabalhos, talentos, ideias e experiências desenvolvidos pelos estudantes do CEJLL, reunindo diferentes áreas e formas de expressão.',
-      'Aqui entra o texto sobre como surgiu a ideia do evento.',
     ],
   },
 
@@ -52,9 +51,9 @@ export const SOBRE = {
     provisorio: false,
     paragrafos: [
       'O CEJLL Fest é construído coletivamente, com a participação de estudantes, professores e demais colaboradores da escola.',
-      'Aqui entra o texto sobre a organização, e abaixo as fotos dos bastidores.',
+      'O comitê de organização reúne representantes das turmas, com preferência para estudantes do 2º e 3º ano.',
     ],
-    fotos: 3, // quantidade de espaços reservados para fotos
+    fotos: 0, // quantidade de espaços reservados para fotos
   },
 
   // Esta seção só aparece quando existir pelo menos um valor CONFIRMADO.

@@ -8,25 +8,25 @@ export const FAQ = [
   {
     id: 'quem-pode',
     pergunta: 'Quem pode participar do CEJLL Fest?',
-    resposta: ['Aqui entra a resposta.'],
+    resposta: ['O CEJLL Fest é um evento feito de alunos para alunos, com participação dos estudantes do CEJLL.'],
     provisoria: false,
   },
   {
     id: 'projeto-novo',
     pergunta: 'Preciso criar um projeto novo?',
-    resposta: ['Aqui entra a resposta.'],
+    resposta: ['Ainda não temos essa informação confirmada. Em caso de dúvida, mande uma mensagem para o WhatsApp (21) 98542-3938.'],
     provisoria: false,
   },
   {
     id: 'individual',
     pergunta: 'Posso participar individualmente?',
-    resposta: ['Aqui entra a resposta.'],
+    resposta: ['Sim. Há projetos apresentados por um único estudante e também por equipes.'],
     provisoria: false,
   },
   {
     id: 'trabalho-antigo',
     pergunta: 'Posso apresentar um trabalho antigo?',
-    resposta: ['Aqui entra a resposta.'],
+    resposta: ['Ainda não temos essa informação confirmada. Em caso de dúvida, mande uma mensagem para o WhatsApp (21) 98542-3938.'],
     provisoria: false,
   },
   {
@@ -41,15 +41,14 @@ export const FAQ = [
   {
     id: 'mais-de-uma',
     pergunta: 'Posso participar de mais de uma atividade?',
-    resposta: ['Aqui entra a resposta.'],
+    resposta: ['Ainda não temos essa informação confirmada. Em caso de dúvida, mande uma mensagem para o WhatsApp (21) 98542-3938.'],
     provisoria: false,
   },
   {
     id: 'escolha-projetos',
     pergunta: 'Como serão escolhidos os projetos?',
     resposta: [
-      'Todas as propostas passam por avaliação e organização antes de serem confirmadas.',
-      'Aqui entram os critérios de escolha.',
+      'Todas as propostas são avaliadas pela organização e pela direção antes de serem confirmadas.',
     ],
     provisoria: false,
   },
@@ -65,7 +64,7 @@ export const FAQ = [
   {
     id: 'visitantes-externos',
     pergunta: 'Visitantes externos poderão entrar?',
-    resposta: ['Aqui entra a resposta.'],
+    resposta: ['Ainda não temos essa informação confirmada. Em caso de dúvida, mande uma mensagem para o WhatsApp (21) 98542-3938.'],
     provisoria: false,
   },
   {

@@ -3,17 +3,17 @@
 export const DESTAQUES = [
   {
     id: 1,
-    titulo: 'Inscrições',
-    texto: 'Acompanhe aqui a abertura dos formulários de comitê, projetos e oficinas.',
-    botao: 'Ver como participar',
+    titulo: 'Inscrições prorrogadas',
+    texto: 'Ainda dá tempo de participar! Os formulários ficam abertos até 24/11.',
+    botao: 'Quero participar',
     para: '/participe',
     variante: 'navy',
     exemplo: false,
   },
   {
     id: 2,
-    titulo: 'Catálogo de projetos',
-    texto: 'Os projetos aprovados vão aparecer aqui, com página própria para cada um.',
+    titulo: 'Projetos e exposições',
+    texto: 'Jogos, arte, música e teatro dos estudantes, cada um com a sua página.',
     botao: 'Ver projetos',
     para: '/projetos',
     variante: 'pink',
@@ -22,7 +22,7 @@ export const DESTAQUES = [
   {
     id: 3,
     titulo: 'CEJLL Awards',
-    texto: 'Conheça as categorias da competição e acompanhe os indicados.',
+    texto: 'Campeões dos torneios, melhor jogo e melhor projeto artístico do ano.',
     botao: 'Conhecer o Awards',
     para: '/awards',
     variante: 'gray',
