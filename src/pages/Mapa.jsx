@@ -111,14 +111,14 @@ export default function Mapa() {
 
             {modo === 'escolher' && (
               <div className="mapa-campos">
-                <div className="mapa-campo">
+                {DIAS.length > 1 && (<div className="mapa-campo">
                   <label htmlFor="mapa-dia">Dia</label>
                   <select id="mapa-dia" value={diaSel} onChange={(e) => setDiaSel(e.target.value)}>
                     {DIAS.map((d) => (
                       <option key={d.id} value={d.id}>{d.rotulo}</option>
                     ))}
                   </select>
-                </div>
+                </div>)}
                 <div className="mapa-campo">
                   <label htmlFor="mapa-hora">Horário</label>
                   <input
@@ -160,7 +160,7 @@ export default function Mapa() {
                 ? `Mostrando agora (${diaDoMomento.rotulo}, ${momento.hora}).`
                 : `Mostrando ${diaDoMomento.rotulo} às ${momento.hora}.`
               : modo === 'agora'
-                ? 'No momento não há nenhum dia do evento em andamento. Escolha um dia e horário para consultar a programação.'
+                ? `O evento acontece em ${DIAS[0].rotulo}. Toque em "Escolher horário" para ver o que vai acontecer em cada espaço.`
                 : 'Escolha um horário para consultar a programação.'}
           </p>
 
@@ -277,7 +277,7 @@ export default function Mapa() {
                   <h2>{espaco.nome}</h2>
 
                   {!momento ? (
-                    <p>Escolha um dia e horário para consultar a programação deste espaço.</p>
+                    <p>Escolha um horário para consultar a programação deste espaço.</p>
                   ) : (
                     <>
                       {emAndamento.length > 0 ? (
