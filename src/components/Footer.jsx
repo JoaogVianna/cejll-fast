@@ -49,9 +49,14 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} CEJLL Fest</p>
+          <p className="footer-credito">
+            Arte do evento:{' '}
+            <a href="https://instagram.com/yunyunilove.you" target="_blank" rel="noopener noreferrer">
+              @yunyunilove.you
+            </a>
+          </p>
         </div>
       </div>
-      <p className="footer-credito">Arte do evento: <a href="https://instagram.com/yunyunilove.you" target="_blank" rel="noopener noreferrer">@yunyunilove.you</a></p>
     </footer>
   )
 }

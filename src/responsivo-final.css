@@ -236,3 +236,29 @@ input[type='time'] {
     font-size: clamp(1.5rem, 6.6vw, 2rem) !important;
   }
 }
+
+.brand,
+.brand span,
+.footer .brand,
+.footer .brand span {
+  white-space: nowrap;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+.footer .brand {
+  font-size: clamp(1.7rem, 7vw, 2.4rem);
+}
+
+.footer-grid > div {
+  min-width: 0;
+}
+
+.footer-bottom {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.footer-bottom .footer-credito {
+  margin-top: 0.4rem;
+}
