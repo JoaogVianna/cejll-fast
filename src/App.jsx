@@ -16,12 +16,31 @@ import Noticias from './pages/Noticias'
 import NoticiaDetalhe from './pages/NoticiaDetalhe'
 import Faq from './pages/Faq'
 import EmBreve from './pages/EmBreve'
+import NaoEncontrada from './pages/NaoEncontrada'
 
 // ao trocar de página, volta para o topo
+const TITULOS = {
+  sobre: 'Sobre',
+  participe: 'Participe',
+  projetos: 'Projetos',
+  programacao: 'Programação',
+  oficinas: 'Oficinas',
+  mapa: 'Mapa',
+  awards: 'CEJLL Awards',
+  noticias: 'Notícias',
+  faq: 'Perguntas frequentes',
+}
+
+function tituloDaPagina(caminho) {
+  const t = TITULOS[caminho.split('/')[1]]
+  return t ? `${t} | CEJLL Fest` : 'CEJLL Fest — evento feito de alunos para alunos'
+}
+
 function RolarParaOTopo() {
   const { pathname } = useLocation()
   useEffect(() => {
     window.scrollTo(0, 0)
+    document.title = tituloDaPagina(pathname)
   }, [pathname])
   return null
 }
@@ -30,8 +49,9 @@ export default function App() {
   return (
     <>
       <RolarParaOTopo />
+      <a className="skip-link" href="#conteudo">Ir para o conteúdo</a>
       <Header />
-      <main>
+      <main id="conteudo" tabIndex={-1}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
@@ -46,7 +66,7 @@ export default function App() {
           <Route path="/noticias" element={<Noticias />} />
           <Route path="/noticias/:id" element={<NoticiaDetalhe />} />
           <Route path="/faq" element={<Faq />} />
-          <Route path="*" element={<EmBreve />} />
+          <Route path="*" element={<NaoEncontrada />} />
         </Routes>
       </main>
       <Footer />

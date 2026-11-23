@@ -131,3 +131,23 @@ h1 {
   max-width: none !important;
   padding-inline: clamp(1rem, 3vw, 2.5rem) !important;
 }
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0.5rem;
+  z-index: 1000;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 10px 10px;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 800;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+main:focus {
+  outline: none;
+}
