@@ -203,3 +203,36 @@ input[type='time'] {
     scroll-behavior: auto;
   }
 }
+
+.slide-inner h1,
+.slide-inner h2,
+.hero .slide h1,
+.hero .slide h2,
+.page-banner h1 {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: manual !important;
+  text-wrap: balance;
+}
+
+.slide-inner h2,
+.hero .slide h2 {
+  font-size: clamp(1.7rem, 7vw, 4.5rem) !important;
+  line-height: 1.05;
+}
+
+.slide-inner h1,
+.hero .slide h1 {
+  font-size: clamp(2rem, 9vw, 6rem) !important;
+}
+
+.page-banner h1 {
+  font-size: clamp(1.9rem, 8.5vw, 6rem) !important;
+}
+
+@media (max-width: 400px) {
+  .slide-inner h2,
+  .hero .slide h2 {
+    font-size: clamp(1.5rem, 6.6vw, 2rem) !important;
+  }
+}
