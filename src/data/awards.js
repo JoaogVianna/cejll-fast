@@ -1,10 +1,3 @@
-// Dados do CEJLL Awards.
-//
-// Os INDICADOS dos prêmios de projetos não ficam aqui: eles vêm de projetos.js.
-// Basta o projeto ter  awards: ['Melhor Jogo do Ano']  (o texto precisa ser igual ao "nome" abaixo).
-//
-// tipo: 'campeonato' = campeão de uma competição (não tem lista de indicados)
-
 export const CATEGORIAS_EXEMPLO = false
 
 export const CATEGORIAS_AWARDS = [
@@ -27,19 +20,14 @@ export const CATEGORIAS_AWARDS = [
   },
 ]
 
-// Votação pelo Google Forms.
-// status: null -> calcula pelas datas (sem datas = "em breve")
-//         'aberta' | 'embreve' | 'encerrada' -> força o estado
-// abre / fecha: datas ISO, ex.: '2026-11-26T09:00:00-03:00'
 export const VOTACAO = {
-  url: null, // cole aqui o link do formulário de votação
+  url: null,
+  embeds: [],
   abre: null,
   fecha: null,
-  status: null,
+  status: 'embreve',
 }
 
-// Resultado: só aparece na página quando publicado for true (depois da cerimônia).
-// categoria: id de uma categoria. projetoId: id do projeto vencedor.
 export const RESULTADO = {
   publicado: false,
   vencedores: [],

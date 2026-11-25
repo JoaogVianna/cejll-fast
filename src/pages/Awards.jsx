@@ -116,7 +116,14 @@ export default function Awards() {
                 <span className="visually-hidden"> no CEJLL Awards (abre em nova aba)</span>
               </a>
             ) : (
-              <button className="btn" type="button" disabled>Votação não disponível</button>
+              (estado === 'aberta' && (VOTACAO.embeds || []).length > 0) ? null : <button className="btn" type="button" disabled>Votação não disponível</button>
+            )}
+            {estado === 'aberta' && (VOTACAO.embeds || []).length > 0 && (
+              <div className="aw-embeds">
+                {VOTACAO.embeds.map((e) => (
+                  <iframe key={e.url} className="aw-embed" src={e.url} title={e.titulo} loading="lazy" />
+                ))}
+              </div>
             )}
           </div>
         </div>

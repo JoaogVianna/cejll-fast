@@ -1,17 +1,3 @@
-// Oficinas e atividades. Para adicionar uma, copie um bloco.
-//
-// Só preencha o que já estiver confirmado: o que for null NÃO aparece no site.
-//
-// categoria:      precisa ser uma das CATEGORIAS_OFICINA
-// livre:          true = atividade que pode ser visitada durante boa parte do evento
-// programacaoId:  id da atividade em programacao.js (de onde vêm o dia e o horário)
-// duracao:        texto, ex.: '1 h' (ou null)
-// local:          nome do espaço, igual ao de mapa.js (ou null)
-// responsaveis:   lista de nomes (ou null)
-// inscricao:      'previa' | 'nao' | null
-// vagas:          'limitadas' | 'abertas' | null
-// comoFunciona:   lista de parágrafos
-
 export const CATEGORIAS_OFICINA = [
   'Oficinas',
   'Atividades interativas',
@@ -91,11 +77,11 @@ export const OFICINAS = [
     resumo: 'A paixão pelo futebol também chega aos videogames!',
     descricao:
       'No campeonato de PES 2017, os participantes poderão se enfrentar em partidas disputadas para decidir quem domina os gramados virtuais. Monte seu time, entre em campo e mostre suas habilidades!',
-    comoFunciona: ['O campeonato acontece em duas salas ao mesmo tempo: Sala 21 e Sala 22.'],
+    comoFunciona: ['O campeonato acontece em duas salas ao mesmo tempo: Sala 22 e Sala 23.'],
     livre: false,
-    programacaoId: 'pes-sala21',
+    programacaoId: 'pes-sala22',
     duracao: '1 h 10 min',
-    local: 'Sala 21',
+    local: 'Sala 22',
     responsaveis: null,
     inscricao: null,
     vagas: null,

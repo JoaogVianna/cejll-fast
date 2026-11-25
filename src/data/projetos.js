@@ -1,17 +1,3 @@
-// Catálogo de projetos. Para adicionar um projeto, copie um bloco e troque os dados.
-//
-// Só preencha o que já estiver confirmado: o que for null NÃO aparece no site.
-//
-// id:            vira o endereço da página (/projetos/<id>), sem espaços nem acentos
-// categoria:     precisa ser uma das CATEGORIAS_PROJETO
-// imagens:       lista de { src, alt }. A 1ª é a imagem principal. Vazia = imagem padrão.
-//                As fotos ficam na pasta public/ (ex.: public/projetos/shimmer-1.jpg -> src: '/projetos/shimmer-1.jpg')
-// participantes: lista de nomes (ou null)
-// turma:         texto (ou null)
-// ferramentas:   lista (ou null)
-// links:         lista de { rotulo, url } (pode ficar vazia)
-// awards:        lista de categorias do CEJLL Awards em que concorre (ou null)
-
 export const CATEGORIAS_PROJETO = [
   'Jogos',
   'Aplicativos',
@@ -37,7 +23,7 @@ export const PROJETOS = [
     turma: null,
     ferramentas: null,
     links: [],
-    localizacao: 'Sala 21',
+    localizacao: 'Sala 23',
     horarios: '09:30 às 12:00, com retomada das exposições à tarde',
     awards: [
       'Melhor Jogo do Ano',
@@ -59,7 +45,7 @@ export const PROJETOS = [
     turma: null,
     ferramentas: null,
     links: [],
-    localizacao: 'Sala 21',
+    localizacao: 'Sala 23',
     horarios: '09:30 às 12:00, com retomada das exposições à tarde',
     awards: [
       'Melhor Jogo do Ano',
@@ -81,8 +67,8 @@ export const PROJETOS = [
     turma: null,
     ferramentas: null,
     links: [],
-    localizacao: 'Sala 22',
-    horarios: 'Exposição das 09:30 às 11:00; campeonato das 11:00 às 11:30',
+    localizacao: 'Sala 23',
+    horarios: 'Exposição das 09:30 às 12:00; campeonato às 11:30, na Sala 22',
     awards: [
       'Melhor Jogo do Ano',
       'Melhor Projeto Artístico do Ano',
@@ -112,19 +98,19 @@ export const PROJETOS = [
     exemplo: false,
   },
   {
-    id: 'jogo-de-oficina-2-projeto-1',
-    nome: 'Jogo de Oficina 2 — Projeto 1',
+    id: 'guardians-of-the-ocean',
+    nome: 'Guardians of the Ocean',
     categoria: 'Jogos',
-    resumo: 'Conheça um dos projetos apresentados na atividade Jogo de Oficina 2!',
+    resumo: 'Conheça este projeto desenvolvido por estudantes do CEJLL!',
     descricao:
-      'Uma oportunidade de descobrir o que os estudantes desenvolveram e conhecer diferentes ideias e experiências criadas durante as oficinas.',
+      'Visite a exposição na Sala 22 e descubra o que os estudantes criaram. Mais detalhes sobre o projeto serão divulgados em breve.',
     imagens: [],
     participantes: null,
     turma: null,
     ferramentas: null,
     links: [],
     localizacao: 'Sala 22',
-    horarios: '09:30 às 12:00',
+    horarios: '09:30 às 12:00, com retomada das exposições à tarde',
     awards: [
       'Melhor Jogo do Ano',
       'Melhor Projeto Artístico do Ano',
@@ -132,19 +118,19 @@ export const PROJETOS = [
     exemplo: false,
   },
   {
-    id: 'jogo-de-oficina-2-projeto-2',
-    nome: 'Jogo de Oficina 2 — Projeto 2',
+    id: 'rota-furada',
+    nome: 'Rota Furada',
     categoria: 'Jogos',
-    resumo: 'Conheça um dos projetos apresentados na atividade Jogo de Oficina 2!',
+    resumo: 'Conheça este projeto desenvolvido por estudantes do CEJLL!',
     descricao:
-      'Uma oportunidade de descobrir o que os estudantes desenvolveram e conhecer diferentes ideias e experiências criadas durante as oficinas.',
+      'Visite a exposição na Sala 22 e descubra o que os estudantes criaram. Mais detalhes sobre o projeto serão divulgados em breve.',
     imagens: [],
     participantes: null,
     turma: null,
     ferramentas: null,
     links: [],
     localizacao: 'Sala 22',
-    horarios: '09:30 às 12:00',
+    horarios: '09:30 às 12:00, com retomada das exposições à tarde',
     awards: [
       'Melhor Jogo do Ano',
       'Melhor Projeto Artístico do Ano',
@@ -152,19 +138,19 @@ export const PROJETOS = [
     exemplo: false,
   },
   {
-    id: 'jogo-de-oficina-2-projeto-3',
-    nome: 'Jogo de Oficina 2 — Projeto 3',
+    id: 'carol',
+    nome: 'Carol',
     categoria: 'Jogos',
-    resumo: 'Conheça um dos projetos apresentados na atividade Jogo de Oficina 2!',
+    resumo: 'Conheça este projeto desenvolvido por estudantes do CEJLL!',
     descricao:
-      'Uma oportunidade de descobrir o que os estudantes desenvolveram e conhecer diferentes ideias e experiências criadas durante as oficinas.',
+      'Visite a exposição na Sala 22 e descubra o que os estudantes criaram. Mais detalhes sobre o projeto serão divulgados em breve.',
     imagens: [],
     participantes: null,
     turma: null,
     ferramentas: null,
     links: [],
-    localizacao: 'Sala 21',
-    horarios: '09:30 às 12:00',
+    localizacao: 'Sala 22',
+    horarios: '09:30 às 12:00, com retomada das exposições à tarde',
     awards: [
       'Melhor Jogo do Ano',
       'Melhor Projeto Artístico do Ano',
@@ -172,23 +158,60 @@ export const PROJETOS = [
     exemplo: false,
   },
   {
-    id: 'jogo-de-oficina-2-projeto-4',
-    nome: 'Jogo de Oficina 2 — Projeto 4',
+    id: 'trashtalk',
+    nome: 'TrashTalk',
     categoria: 'Jogos',
-    resumo: 'Conheça um dos projetos apresentados na atividade Jogo de Oficina 2!',
+    resumo: 'Conheça este projeto desenvolvido por estudantes do CEJLL!',
     descricao:
-      'Uma oportunidade de descobrir o que os estudantes desenvolveram e conhecer diferentes ideias e experiências criadas durante as oficinas.',
+      'Visite a exposição na Sala 22 e descubra o que os estudantes criaram. Mais detalhes sobre o projeto serão divulgados em breve.',
     imagens: [],
     participantes: null,
     turma: null,
     ferramentas: null,
     links: [],
-    localizacao: 'Sala 21',
-    horarios: '09:30 às 12:00',
+    localizacao: 'Sala 22',
+    horarios: '09:30 às 12:00, com retomada das exposições à tarde',
     awards: [
       'Melhor Jogo do Ano',
       'Melhor Projeto Artístico do Ano',
     ],
+    exemplo: false,
+  },
+  {
+    id: 'ultima-chance',
+    nome: 'Última Chance',
+    categoria: 'Jogos',
+    resumo: 'Conheça este projeto desenvolvido por estudantes do CEJLL!',
+    descricao:
+      'Visite a exposição na Sala 22 e descubra o que os estudantes criaram. Mais detalhes sobre o projeto serão divulgados em breve.',
+    imagens: [],
+    participantes: null,
+    turma: null,
+    ferramentas: null,
+    links: [],
+    localizacao: 'Sala 22',
+    horarios: '09:30 às 12:00, com retomada das exposições à tarde',
+    awards: [
+      'Melhor Jogo do Ano',
+      'Melhor Projeto Artístico do Ano',
+    ],
+    exemplo: false,
+  },
+  {
+    id: 'biblioteca-do-goat',
+    nome: 'Biblioteca do Goat',
+    categoria: 'Outros',
+    resumo: 'Conheça este projeto desenvolvido por estudantes do CEJLL!',
+    descricao:
+      'Visite a exposição na Sala 23 e descubra o que os estudantes criaram. Mais detalhes sobre o projeto serão divulgados em breve.',
+    imagens: [],
+    participantes: null,
+    turma: null,
+    ferramentas: null,
+    links: [],
+    localizacao: 'Sala 23',
+    horarios: '09:30 às 12:00, com retomada das exposições à tarde',
+    awards: null,
     exemplo: false,
   },
   {
@@ -203,7 +226,7 @@ export const PROJETOS = [
     turma: null,
     ferramentas: null,
     links: [],
-    localizacao: 'Convivência (mesa do meio)',
+    localizacao: 'Convivência',
     horarios: '09:30 às 12:00, com retomada das exposições à tarde',
     awards: null,
     exemplo: false,
@@ -222,7 +245,7 @@ export const PROJETOS = [
     turma: null,
     ferramentas: null,
     links: [],
-    localizacao: 'Convivência (mesa do meio)',
+    localizacao: 'Convivência',
     horarios: '09:30 às 12:00, com retomada das exposições à tarde',
     awards: null,
     exemplo: false,
@@ -338,7 +361,7 @@ export const PROJETOS = [
     ferramentas: null,
     links: [],
     localizacao: 'Auditório',
-    horarios: '09:30 às 09:45',
+    horarios: '11:00 às 11:15',
     awards: [
       'Melhor Projeto Artístico do Ano',
     ],
@@ -357,7 +380,7 @@ export const PROJETOS = [
     ferramentas: null,
     links: [],
     localizacao: 'Auditório',
-    horarios: '09:45 às 10:35',
+    horarios: '10:00 às 10:50',
     awards: [
       'Melhor Projeto Artístico do Ano',
     ],
